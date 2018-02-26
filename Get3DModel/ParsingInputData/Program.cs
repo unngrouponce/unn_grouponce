@@ -10,6 +10,9 @@ namespace ParsingInputData
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите имя папки:");
+            string n = Console.ReadLine();
+            Parser p = new Parser(n);
         }
     }
 }
