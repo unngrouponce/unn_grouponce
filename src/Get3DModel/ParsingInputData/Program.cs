@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ParsingInputData
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите имя папки:");
-            string n = Console.ReadLine();
-            Parser p = new Parser(n);
+            Parser parser = new Parser(args[0]);
+           
+            ObjWriter writer = new ObjWriter(args[0]+"\\result.obj");
         }
     }
 }
