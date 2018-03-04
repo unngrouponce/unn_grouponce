@@ -1,0 +1,7 @@
+C:\Users\Ксения\Documents\Visual Studio 2012\Projects\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe.config
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe.config
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.pdb
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.csprojResolveAssemblyReference.cache
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.pdb
