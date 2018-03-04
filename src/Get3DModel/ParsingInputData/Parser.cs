@@ -48,7 +48,13 @@ namespace ParsingInputData
         /// <param name="folderName">имя папки</param>
         public Parser(string folderName)
         {
-            List<string> filesname = Directory.GetFiles(folderName).ToList<string>();
+            List<string> filesname=new List<string>();
+            try {  filesname= Directory.GetFiles(folderName).ToList(); }
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                Console.WriteLine("the configuration file is not found");
+                Environment.Exit(-1);
+            }
             _TEMPLATE = (filesname.First(x => x.EndsWith(".camera"))).Split('.')[0];
             string conf = new StreamReader(_TEMPLATE + ".camera").ReadToEnd();
             _FDISTANCE = Convert.ToDouble(new Regex(@"f=(\d+)").Match(conf).Groups[1].ToString());
