@@ -1,0 +1,12 @@
+F:\Университет\Магистратура(1 курс)\1-ый семестр\Филимонов. Параллельное программирование\3DModelBuilding\3DModelBuilding\bin\Debug\3DModelBuilding.exe.config
+F:\Университет\Магистратура(1 курс)\1-ый семестр\Филимонов. Параллельное программирование\3DModelBuilding\3DModelBuilding\bin\Debug\3DModelBuilding.exe
+F:\Университет\Магистратура(1 курс)\1-ый семестр\Филимонов. Параллельное программирование\3DModelBuilding\3DModelBuilding\bin\Debug\3DModelBuilding.pdb
+F:\Университет\Магистратура(1 курс)\1-ый семестр\Филимонов. Параллельное программирование\3DModelBuilding\3DModelBuilding\obj\Debug\3DModelBuilding.csprojResolveAssemblyReference.cache
+F:\Университет\Магистратура(1 курс)\1-ый семестр\Филимонов. Параллельное программирование\3DModelBuilding\3DModelBuilding\obj\Debug\3DModelBuilding.exe
+F:\Университет\Магистратура(1 курс)\1-ый семестр\Филимонов. Параллельное программирование\3DModelBuilding\3DModelBuilding\obj\Debug\3DModelBuilding.pdb
+C:\Users\kmm11\Desktop\3DModelBuilding\3DModelBuilding\bin\Debug\3DModelBuilding.exe.config
+C:\Users\kmm11\Desktop\3DModelBuilding\3DModelBuilding\obj\Debug\3DModelBuilding.exe
+C:\Users\kmm11\Desktop\3DModelBuilding\3DModelBuilding\obj\Debug\3DModelBuilding.pdb
+C:\Users\kmm11\Desktop\3DModelBuilding\3DModelBuilding\bin\Debug\3DModelBuilding.exe
+C:\Users\kmm11\Desktop\3DModelBuilding\3DModelBuilding\bin\Debug\3DModelBuilding.pdb
+C:\Users\kmm11\Desktop\3DModelBuilding\3DModelBuilding\obj\Debug\3DModelBuilding.csprojResolveAssemblyReference.cache
