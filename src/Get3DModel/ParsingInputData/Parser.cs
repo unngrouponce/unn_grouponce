@@ -8,6 +8,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 namespace ParsingInputData
 {
+    /// <summary>
+    /// Читает конфигурационный файл в указанной директории, сохраняет параметры и изображения.
+    /// </summary>
     public class Parser
     {
         private double _FDISTANCE;
@@ -16,12 +19,33 @@ namespace ParsingInputData
         private string _TEMPLATE;
         private Bitmap[] _Images;
 
+        /// <summary>
+        /// Фокусное расстояние
+        /// </summary>
         public double FDISTANCE { get { return _FDISTANCE; } }
+
+        /// <summary>
+        ///Наблюдаемая ширина в фокусе
+        /// </summary>
         public double FWIDTH { get { return _FWIDTH; } }
+
+        /// <summary>
+        ///Коэффициент для вычисления абсолютной высоты фокуса
+        /// </summary>
         public double HCOEFF { get { return _HCOEFF; } }
+
+        /// <summary>
+        ///шаблон имени файла
+        /// </summary>
         public string TEMPLATE { get { return _TEMPLATE; } }
+
+        /// <summary>
+        ///массив изображений
+        /// </summary>
         public Bitmap[] Images { get { return _Images; } }
 
+       
+        /// <param name="folderName">имя папки</param>
         public Parser(string folderName)
         {
             List<string> filesname = Directory.GetFiles(folderName).ToList<string>();
