@@ -35,4 +35,4 @@
 ## Методы
 |Тип|Имя|Описание|
 |---|---|---|
-|void| addPoints(List<Point3D> points)|добавляет точки в файл|
+|void| addPoints(List&lt;Point3D&gt; points)|добавляет точки в файл|
