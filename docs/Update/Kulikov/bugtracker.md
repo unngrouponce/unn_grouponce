@@ -34,10 +34,12 @@
 
 ## Список задач
 Синтаксис у списка задач такой:
->- [x] @mentions, #refs, \[links]()
+```
+- [x] @mentions, #refs, \[links]()
 - [x] list syntax required (any unordered or ordered list supported)
 - [x] this is a complete item
 - [ ] this is an incomplete item
+```
 
 
 При сохранении комментария со списком он превращается в полноценный список задач с чекбоксами, которые можно отмечать (при этом соответствующий [x] появляется в markdown-разметке автоматически). 
