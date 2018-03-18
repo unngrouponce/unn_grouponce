@@ -11,7 +11,7 @@ namespace ParsingInputData
     {
         static void Main(string[] args)
         {
-            Parser parser = new Parser(args[0]);
+            ParserOld parser = new ParserOld(args[0]);
            
             ObjWriter writer = new ObjWriter(args[0]+"\\result.obj");
         }

@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalculatedBlock\CalculatedBlock.csproj">
+      <Project>{b3a35c2c-a64c-4518-aac6-9906d42d1e98}</Project>
+      <Name>CalculatedBlock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{bdbff10e-7a2c-429b-95bd-d737ee8646de}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParsingInputData\ParsingInputData.csproj">
+      <Project>{353b111f-b27b-4129-8288-96223ce96e1c}</Project>
+      <Name>ParsingInputData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Preserse\Preserse.csproj">
+      <Project>{637bef56-bf94-4d07-9fa8-b59a6783d1ac}</Project>
+      <Name>Preserse</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
