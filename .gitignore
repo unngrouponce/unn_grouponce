@@ -3,9 +3,7 @@
 !.gitignore
 *.cache
 *.FileListAbsolute.txt 
-<<<<<<< HEAD
-=======
 *.config
 *.pdb
 *.exe
->>>>>>> 8d61da6bf8f8a1b91240bfa0c71a6048c2942f46
+*.suo 

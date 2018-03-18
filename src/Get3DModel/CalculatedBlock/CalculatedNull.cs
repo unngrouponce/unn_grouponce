@@ -7,7 +7,7 @@ using Data;
 
 namespace CalculatedBlock
 {
-    class CalculatedNull: ICalculated
+    public class CalculatedNull: ICalculated
     {
         Solution solution;
 
@@ -23,7 +23,7 @@ namespace CalculatedBlock
             Random random = new Random();
             List<Point> listPoint = new List<Point>();
             //Задаем случайное количество точек попавших в фокус
-            int countFocusPoint = random.Next(1, 20);
+            int countFocusPoint = random.Next(image.width(), image.width() * image.height());
 
             for (int i = 0; i < countFocusPoint; i++)
             {

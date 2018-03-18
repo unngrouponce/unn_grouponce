@@ -20,7 +20,8 @@ namespace Get3DModel
         static void Main(string[] args)
         {
             IParser parser = new Parser();
-            ICalculated calculated = new Calculated();
+            //ICalculated calculated = new Calculated();
+            ICalculated calculated = new CalculatedNull();
             IPreserseOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
             Setting setting = null;
@@ -28,11 +29,11 @@ namespace Get3DModel
             List<string> filesInagesname;
             string pathFolder;
             string pathConfig;
-            
-            pathFolder = "";
+
+            pathFolder = args[0];
             filesInagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
 
-            pathConfig = pathFolder + "/config.ini";
+            pathConfig = pathFolder + @"\ConfigurationFile.txt";
             FileInfo fileInf = new FileInfo(pathConfig);
             if (fileInf.Exists)
                 setting = new Setting(pathConfig);
@@ -46,14 +47,14 @@ namespace Get3DModel
 
             for (int i = 0; i < filesInagesname.Count; i++)
             {
-                Data.Image itemImage = new Data.Image(pathFolder + "/" + filesInagesname[i]);
+                Data.Image itemImage = new Data.Image(filesInagesname[i]);
                 calculated.clarifySolution(itemImage);
             }
 
             Solution solution = calculated.getSolution();
 
-            preserveOBJ.saveOBJ(solution, setting);
-            preservePNG.savePNG(solution);
+            preserveOBJ.saveOBJ(solution, setting, pathFolder);
+            preservePNG.savePNG(solution, pathFolder);
         }
     }
 }
