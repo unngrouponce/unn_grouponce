@@ -24,9 +24,10 @@ namespace Data
             IParser parser = new Parser();
             image = parser.readPNG(pathImage);
 
-            string[] path = pathImage.Split('/');
-            string name = path[path.Length - 1].Replace(".png", "");
-            _tall = Convert.ToDouble(name);
+            FileInfo infoImage = new FileInfo(pathImage);
+            string name = infoImage.Name.Replace(".png", "");
+            string[] nameSplit = name.Split('_');
+            _tall = Convert.ToDouble(nameSplit[1]);
         }
 
         /// <summary>
