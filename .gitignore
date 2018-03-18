@@ -5,3 +5,4 @@
 *.FileListAbsolute.txt 
 *.config
 *.pdb
+*.exe
