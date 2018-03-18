@@ -8,9 +8,9 @@ namespace Preserse
 {
     public class PreservePNG: IPreservePNG
     {
-        public void savePNG(Data.Solution solution)
+        public void savePNG(Data.Solution solution, string path)
         {
-            throw new NotImplementedException();
+            solution.sharpImage.Save(path + "//sharpImage.png", System.Drawing.Imaging.ImageFormat.Png);
         }
     }
 }

@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data;
 
 namespace CalculatedBlock
 {
     public class Calculated : ICalculated
     {
+        Solution solution;
+
+        public Calculated() { }
+
         public void createdBeginSolution()
         {
-            throw new NotImplementedException();
+            solution = new Solution();
         }
 
         public void clarifySolution(Data.Image image)
         {
-            throw new NotImplementedException();
+            //solution.setValue()
         }
 
         public Data.Solution getSolution()

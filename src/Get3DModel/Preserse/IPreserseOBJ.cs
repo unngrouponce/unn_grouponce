@@ -14,6 +14,7 @@ namespace Preserse
         /// </summary>
         /// <param name="solution">Расчитаное решение</param>
         /// <param name="setting">Настройки сиситемы</param>
-        void saveOBJ(Solution solution, Setting setting);
+        /// <param name="path">Пусть к сохранению</param>
+        void saveOBJ(Solution solution, Setting setting, string path);
     }
 }

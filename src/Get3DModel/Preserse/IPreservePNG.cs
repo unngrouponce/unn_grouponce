@@ -13,6 +13,7 @@ namespace Preserse
         /// Сохранение OBJ файла
         /// </summary>
         /// <param name="solution">Расчитаное решение</param>
-        void savePNG(Solution solution);
+        /// <param name="path">Пусть к сохранению</param>
+        void savePNG(Solution solution, string path);
     }
 }

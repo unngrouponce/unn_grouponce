@@ -8,9 +8,14 @@ namespace Preserse
 {
     public class PreserveOBJ: IPreserseOBJ
     {
-        public void saveOBJ(Data.Solution solution, Data.Setting setting)
+        public void saveOBJ(Data.Solution solution, Data.Setting setting, string path)
         {
-            throw new NotImplementedException();
+            ObjWriter objWriter = new ObjWriter(path + "//result.obj");
+            List<Point3D> listPoint3D = new List<Point3D>();
+            for(int x=0; x<solution.sharpImage.Width; x++)
+                for (int y=0; y<solution.sharpImage.Height; y++)
+                    listPoint3D.Add(new Point3D(x,y,solution.getValue(x,y)));
+            objWriter.addPoints(listPoint3D);
         }
     }
 }
