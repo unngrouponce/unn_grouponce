@@ -27,9 +27,7 @@ namespace Data
             FileInfo infoImage = new FileInfo(pathImage);
             string name = infoImage.Name.Replace(".png", "");
             string[] nameSplit = name.Split('_');
-            //  _tall = Convert.ToDouble(nameSplit[1]);
-            try { _tall = Convert.ToDouble(new Regex(@"(\d+)").Match(nameSplit[1]).Groups[1].ToString()); }
-            catch { Console.WriteLine("image file have incorrect named"); Environment.Exit(-1); }
+            _tall = Convert.ToDouble(nameSplit[1]);
         }
 
         /// <summary>

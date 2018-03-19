@@ -10,9 +10,3 @@ C:\Users\Саша\Desktop\star\dev\src\Get3DModel\ParsingInputData\obj\Debug\Par
 C:\Users\Саша\Desktop\star\dev\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.exe
 C:\Users\Саша\Desktop\star\dev\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.pdb
 C:\Users\Саша\Desktop\star\dev\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.csprojResolveAssemblyReference.cache
-C:\Users\Саша\Desktop\star\Kulikov\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.exe.config
-C:\Users\Саша\Desktop\star\Kulikov\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.exe
-C:\Users\Саша\Desktop\star\Kulikov\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.pdb
-C:\Users\Саша\Desktop\star\Kulikov\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.csprojResolveAssemblyReference.cache
-C:\Users\Саша\Desktop\star\Kulikov\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.exe
-C:\Users\Саша\Desktop\star\Kulikov\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.pdb
