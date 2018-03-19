@@ -35,7 +35,7 @@ namespace ParsingInputData
 
         public System.Drawing.Bitmap readPNG(string path)
         {
-            Console.WriteLine($"processing of the {path} image is started...");
+            Console.WriteLine(string.Format("processing of the {0} image is started...",path));
             return (Bitmap)Image.FromFile(path);
         }
     }
