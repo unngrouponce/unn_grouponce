@@ -12,6 +12,7 @@ using ParsingInputData;
 using Data;
 using CalculatedBlock;
 using Preserse;
+using System.Diagnostics;
 
 namespace Get3DModel
 {
@@ -26,14 +27,15 @@ namespace Get3DModel
             IPreservePNG preservePNG = new PreservePNG();
             Setting setting = null;
 
-            List<string> filesInagesname;
+            List<string> filesImagesname;
             string pathFolder;
             string pathConfig;
-
+            if (args.Length == 0) { Console.WriteLine("usage: Get3DModel.exe <path to folder>"); Environment.Exit(-1); }
             pathFolder = args[0];
-            filesInagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
+            filesImagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
 
-            pathConfig = pathFolder + @"\ConfigurationFile.txt";
+            //pathConfig = pathFolder + @"\ConfigurationFile.txt";
+            pathConfig = Directory.GetFiles(pathFolder).ToList().First(x => x.EndsWith(".camera")|| x.EndsWith(".ini")|| x.EndsWith("ConfigurationFile.txt"));
             FileInfo fileInf = new FileInfo(pathConfig);
             if (fileInf.Exists)
                 setting = new Setting(pathConfig);
@@ -44,17 +46,22 @@ namespace Get3DModel
             }
 
             calculated.createdBeginSolution();
-
-            for (int i = 0; i < filesInagesname.Count; i++)
+            Stopwatch timeForParsing = new Stopwatch();
+            for (int i = 0; i < filesImagesname.Count; i++)
             {
-                Data.Image itemImage = new Data.Image(filesInagesname[i]);
+                if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                timeForParsing.Restart();
+                Data.Image itemImage = new Data.Image(filesImagesname[i]);
                 calculated.clarifySolution(itemImage);
+                timeForParsing.Stop();
+                Console.WriteLine($"processing of the {filesImagesname[i]} has finished\n\telapsed time: {timeForParsing.Elapsed.Milliseconds} milliseconds");
             }
 
             Solution solution = calculated.getSolution();
-
+            Console.WriteLine("saving data was started");
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
             preservePNG.savePNG(solution, pathFolder);
+            Console.Read();//temporary
         }
     }
 }
