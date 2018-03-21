@@ -4,17 +4,17 @@
 Багтрекер(список задач) необходим для того что бы учитывать и контролировать ошибки и неполадки, найденные в программе, пожелания пользователей, а также следить за процессом устранения этих ошибок и выполнения или невыполнения пожеланий и обсуждения текущих задач.
 ## Создание задачи
 1. Для создания новой задачи перейди на вкладку `Issues`.
-	![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-1.png)
+	![](./data/issue-1.png)
 2. Нажми на кнопку `New issue`.
-	![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-2.png)
+	![](./data/issue-2.png)
 3. Опиши задачу.
-	![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-3.png)
+	![](./data/issue-3.png)
 4. В меню `Assignees` назнач задачу одному или нескольким участникам команды.
-	![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-4.png)
+	![](./data/issue-4.png)
 5. В меню `Labels` определи категорию задачи.
-	![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-5.png)
+	![](./data/issue-5.png)
 6. Сохрани задачу нажав на кнопку `Submit new issue`.
-	![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-6.png)
+	![](./data/issue-6.png)
 
 ## Категории задач
 - `Ошибка`-запись должна содержать как описание ошибки так и способ её воспроизведения
@@ -43,4 +43,4 @@
 
 
 При сохранении комментария со списком он превращается в полноценный список задач с чекбоксами, которые можно отмечать (при этом соответствующий [x] появляется в markdown-разметке автоматически). 
-![](https://raw.githubusercontent.com/unngrouponce/unn_grouponce/master/data/issue-7.png)
+![](./data/issue-7.png)
