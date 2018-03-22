@@ -1,4 +1,6 @@
 language: csharp
 mono: none
-dotnet: 2.0.0-preview2-006497
+dotnet: 1.1.5
+script:
+ - dotnet restore
 solution: unn_grouponce/src/Get3DModel/Get3DModel.sln
