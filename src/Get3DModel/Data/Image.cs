@@ -21,8 +21,9 @@ namespace Data
         /// <param name="pathImage">Путь к изображению</param>
         public Image(string pathImage)
         {
-            IParser parser = new Parser();
-            image = parser.readPNG(pathImage);
+            //IParser parser = new Parser();
+            //image = parser.readPNG(pathImage);
+            image = Parser.readPNG(pathImage);
 
             FileInfo infoImage = new FileInfo(pathImage);
             string name = infoImage.Name.Replace(".png", "");

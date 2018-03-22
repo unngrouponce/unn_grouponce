@@ -19,13 +19,13 @@ namespace Get3DModel
     {
         static void Main(string[] args)
         {
-            IParser parser = new Parser();
+           // IParser parser = new Parser();
             //ICalculated calculated = new Calculated();
             ICalculated calculated = new CalculatedNull();
             IPreserseOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
             Setting setting = null;
-
+           
             List<string> filesInagesname;
             string pathFolder;
             string pathConfig;

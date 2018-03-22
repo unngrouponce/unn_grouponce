@@ -1,0 +1,14 @@
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe.config
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.pdb
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\CalculatedBlock.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Data.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\ParsingInputData.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Preserse.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\CalculatedBlock.pdb
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Data.pdb
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\ParsingInputData.pdb
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\bin\Debug\Preserse.pdb
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.csprojResolveAssemblyReference.cache
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.exe
+C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.pdb
