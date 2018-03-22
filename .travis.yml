@@ -1,2 +1,4 @@
 language: csharp
+mono: none
+dotnet: 2.0.0-preview2-006497
 solution: unn_grouponce/src/Get3DModel/Get3DModel.sln
