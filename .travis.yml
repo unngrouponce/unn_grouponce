@@ -1,2 +1,2 @@
 language: csharp
-solution: 3DModelBuilding.sln
+solution: unn_grouponce/src/3DModelBuilding/3DModelBuilding.sln
