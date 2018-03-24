@@ -58,12 +58,12 @@
       <Name>Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\ParsingInputData\ParsingInputData.csproj">
-      <Project>{353b111f-b27b-4129-8288-96223ce96e1c}</Project>
+      <Project>{abac1faa-5c60-4226-9b2f-9244e9d3af21}</Project>
       <Name>ParsingInputData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Preserse\Preserse.csproj">
-      <Project>{637bef56-bf94-4d07-9fa8-b59a6783d1ac}</Project>
-      <Name>Preserse</Name>
+    <ProjectReference Include="..\Preserse\Preserve.csproj">
+      <Project>{bb2c3860-31d9-4c88-8f39-eccd1674d025}</Project>
+      <Name>Preserve</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

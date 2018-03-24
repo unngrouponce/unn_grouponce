@@ -50,6 +50,22 @@ namespace Data
             }
         }
 
+        public void  binarization(double threshold =0)
+        {
+            if (threshold == 0)
+            {
+                double sum = 0;
+                for (int Xcount = 0; Xcount < _sharpImage.Width; Xcount++)
+                    for (int Ycount = 0; Ycount < _sharpImage.Height; Ycount++)
+                        sum = sum + mapHeights[Xcount, Ycount];
+                threshold = sum / _sharpImage.Width *_sharpImage.Height;
+            }
+            for (int Xcount = 0; Xcount < _sharpImage.Width; Xcount++)
+                for (int Ycount = 0; Ycount < _sharpImage.Height; Ycount++)
+                    if (mapHeights[Xcount, Ycount] < threshold)
+                        mapHeights[Xcount, Ycount] = -1;
+        }
+
         public Bitmap sharpImage { get { return _sharpImage; } }
 
         public double getValue(int x, int y) { return mapHeights[x, y]; }
