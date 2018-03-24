@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3DDED6E7-063A-4094-A126-52D91BC5E79A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{BB2C3860-31D9-4C88-8F39-ECCD1674D025}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Get3DModel</RootNamespace>
-    <AssemblyName>Get3DModel</AssemblyName>
+    <RootNamespace>Preserse</RootNamespace>
+    <AssemblyName>Preserse</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,28 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IPreserveOBJ.cs" />
+    <Compile Include="IPreservePNG.cs" />
+    <Compile Include="ObjWriter.cs" />
+    <Compile Include="Point3D.cs" />
+    <Compile Include="PreserveOBJ.cs" />
+    <Compile Include="PreservePNG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculatedBlock\CalculatedBlock.csproj">
-      <Project>{b3a35c2c-a64c-4518-aac6-9906d42d1e98}</Project>
-      <Name>CalculatedBlock</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{bdbff10e-7a2c-429b-95bd-d737ee8646de}</Project>
       <Name>Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ParsingInputData\ParsingInputData.csproj">
-      <Project>{abac1faa-5c60-4226-9b2f-9244e9d3af21}</Project>
-      <Name>ParsingInputData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Preserse\Preserve.csproj">
-      <Project>{bb2c3860-31d9-4c88-8f39-eccd1674d025}</Project>
-      <Name>Preserve</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
