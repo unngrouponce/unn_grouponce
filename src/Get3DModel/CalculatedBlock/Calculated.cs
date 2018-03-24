@@ -15,7 +15,11 @@ namespace CalculatedBlock
         IMathematical matematical;
         double[,] swingSharpness;
 
-        public Calculated() { }
+        public Calculated()
+        {
+            changeImage = new ChangeImage();
+            matematical = new Mathematical();
+        }
 
         public void createdBeginSolution()
         {
