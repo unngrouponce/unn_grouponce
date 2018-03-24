@@ -15,14 +15,14 @@ namespace Data
     /// </summary>
     public class Image
     {
-        Bitmap image;
+        Bitmap _image;
         double _tall;
 
         /// <param name="pathImage">Путь к изображению</param>
         public Image(string pathImage)
         {
             IParser parser = new Parser();
-            image = parser.readPNG(pathImage);
+            _image = parser.readPNG(pathImage);
 
             FileInfo infoImage = new FileInfo(pathImage);
             string name = infoImage.Name.Replace(".png", "");
@@ -33,18 +33,19 @@ namespace Data
         /// <summary>
         /// Ширина изображения в пикселях
         /// </summary>
-        public int width() { return image.Width;}
+        public int width() { return _image.Width;}
         /// <summary>
         /// Высота изображения в пикселях
         /// </summary>
-        public int height() { return image.Height;}
+        public int height() { return _image.Height;}
         /// <summary>
         /// Получает цвет указанного пикселя в этом изображении
         /// </summary>
-        public Color GetPixel(int x, int y){return image.GetPixel(x, y);}
+        public Color GetPixel(int x, int y){return _image.GetPixel(x, y);}
         /// <summary>
         /// Относительная высота на котором сделано изображение
         /// </summary>
         public double tall { get { return _tall; } }
+        public Bitmap image { get { return _image; } }
     }
 }
