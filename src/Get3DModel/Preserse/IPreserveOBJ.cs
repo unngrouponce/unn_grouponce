@@ -7,7 +7,7 @@ using Data;
 
 namespace Preserse
 {
-    public interface IPreserseOBJ
+    public interface IPreserveOBJ
     {
         /// <summary>
         /// Расчет и сохранение OBJ файла
