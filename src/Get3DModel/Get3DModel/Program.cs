@@ -56,13 +56,8 @@ namespace Get3DModel
                 calculated.clarifySolution(itemImage);
                 timeForParsing.Stop();
                 Console.WriteLine(
-<<<<<<< HEAD
                     string.Format("processing of the {0} has finished\n\telapsed time: {1} milliseconds",
                     filesImagesname[i], timeForParsing.Elapsed.Milliseconds));
-=======
-                    string.Format("processing of the {0} has finished\n\telapsed time: {timeForParsing.Elapsed.Milliseconds}milliseconds",
-                    filesImagesname[i]));
->>>>>>> c6cc46104f54b1573227c58063c101166796f0ba
             }
 
             Solution solution = calculated.getSolution();
