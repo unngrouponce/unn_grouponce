@@ -4,5 +4,9 @@ C:\WorkSpace\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.dll
 C:\WorkSpace\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.pdb
 C:\Users\Саша\Desktop\star\Get3DModel2\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.dll
 C:\Users\Саша\Desktop\star\Get3DModel2\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.pdb
+<<<<<<< HEAD
+=======
+C:\Users\Саша\Desktop\star\Get3DModel2\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.csprojResolveAssemblyReference.cache
+>>>>>>> c6cc46104f54b1573227c58063c101166796f0ba
 C:\Users\Саша\Desktop\star\Get3DModel2\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.dll
 C:\Users\Саша\Desktop\star\Get3DModel2\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.pdb
