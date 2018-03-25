@@ -41,7 +41,7 @@ namespace CalculatedBlock
             {
                 swingSharpness = new double[image.width(), image.height()];
                 for (int x = 0; x < image.width(); x++)
-                    for (int y = 0; y < image.width(); y++)
+                    for (int y = 0; y < image.height(); y++)
                         swingSharpness[x,y] = 0;
                 width = image.width();
                 height = image.height();
