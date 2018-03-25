@@ -51,7 +51,7 @@ namespace CalculatedBlock
                         swingSharpness[x, y] = gradient;
                     }
                 }
-            //solution.binarization();
+           // solution.binarization();
             solution.setValue(listPoint, image);
         }
 
