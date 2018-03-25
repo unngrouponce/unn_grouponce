@@ -51,13 +51,13 @@ namespace CalculatedBlock
                         swingSharpness[x, y] = gradient;
                     }
                 }
-            //solution.binarization();
+           // solution.binarization();
             solution.setValue(listPoint, image);
         }
 
         public Data.Solution getSolution()
         {
-            throw new NotImplementedException();
+            return solution;
         }
     }
 }
