@@ -14,11 +14,19 @@ namespace CalculatedBlock
         IChangeImage changeImage;
         IMathematical matematical;
         double[,] swingSharpness;
+        double width;
+        double height;
 
         public Calculated()
         {
             changeImage = new ChangeImage();
-            matematical = new Mathematical();
+            matematical = new MathematicalDefault();
+        }
+
+        public Calculated(IMathematical stategia)
+        {
+            changeImage = new ChangeImage();
+            matematical = stategia;
         }
 
         public void createdBeginSolution()
@@ -34,7 +42,9 @@ namespace CalculatedBlock
                 swingSharpness = new double[image.width(), image.height()];
                 for (int x = 0; x < image.width(); x++)
                     for (int y = 0; y < image.width(); y++)
-                        swingSharpness[x,y] = -255;
+                        swingSharpness[x,y] = 0;
+                width = image.width();
+                height = image.height();
             }
 
             List<Data.Point> listPoint = new List<Data.Point>();
@@ -42,7 +52,7 @@ namespace CalculatedBlock
             curentImage = changeImage.translateToMonochrome(curentImage);
             matematical.setImage(curentImage);
             for (int x = 0; x < image.width(); x++)
-                for (int y = 0; y < image.width(); y++)
+                for (int y = 0; y < image.height(); y++)
                 {
                     double gradient = matematical.gradientAtPoint(x, y);
                     if (gradient > swingSharpness[x, y])
@@ -51,13 +61,12 @@ namespace CalculatedBlock
                         swingSharpness[x, y] = gradient;
                     }
                 }
-            solution.binarization();
             solution.setValue(listPoint, image);
         }
 
         public Data.Solution getSolution()
         {
-            throw new NotImplementedException();
+            return solution;
         }
     }
 }

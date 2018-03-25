@@ -9,7 +9,6 @@ namespace CalculatedBlock
 {
     class ChangeImage : IChangeImage
     {
-        
         public Bitmap translateToMonochrome(Bitmap image)
         {
             Bitmap res = new Bitmap(image.Width, image.Height, image.PixelFormat);

@@ -50,20 +50,13 @@ namespace Data
             }
         }
 
-        public void  binarization(double threshold =0)
+        public void setValue(List<Point> coordinate, Color color)
         {
-            if (threshold == 0)
+            foreach (Point point in coordinate)
             {
-                double sum = 0;
-                for (int Xcount = 0; Xcount < _sharpImage.Width; Xcount++)
-                    for (int Ycount = 0; Ycount < _sharpImage.Height; Ycount++)
-                        sum = sum + mapHeights[Xcount, Ycount];
-                threshold = sum / _sharpImage.Width *_sharpImage.Height;
+                mapHeights[point.x, point.y] = -1;
+                _sharpImage.SetPixel(point.x, point.y, color);
             }
-            for (int Xcount = 0; Xcount < _sharpImage.Width; Xcount++)
-                for (int Ycount = 0; Ycount < _sharpImage.Height; Ycount++)
-                    if (mapHeights[Xcount, Ycount] < threshold)
-                        mapHeights[Xcount, Ycount] = -1;
         }
 
         public Bitmap sharpImage { get { return _sharpImage; } }

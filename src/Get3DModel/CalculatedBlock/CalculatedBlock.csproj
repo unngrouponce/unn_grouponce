@@ -41,12 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculated.cs" />
-    <Compile Include="CalculatedNull.cs" />
     <Compile Include="ChangeImage.cs" />
     <Compile Include="ICalculated.cs" />
     <Compile Include="IChangeImage.cs" />
     <Compile Include="IMathematical.cs" />
-    <Compile Include="Mathematical.cs" />
+    <Compile Include="MathematicalOption1.cs" />
+    <Compile Include="MathematicalDefault.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

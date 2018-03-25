@@ -4,20 +4,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Data;
 namespace CalculatedBlock
 {
-    class Mathematical : IMathematical
+    class MathematicalDefault : IMathematical
     {
         private Bitmap image;
         public double gradientAtPoint(int x, int y)
         {
-            throw new NotImplementedException();
+            return image.GetPixel(x, y).R;
         }
 
         public void setImage(Bitmap image)
         {
-            this.image = image;
+            this.image = new Data.Image((Bitmap)image.Clone()).Convolution(new double[,]
+                             {{0, 1, 0},
+                              {1, -4, 1},
+                              {0, 1, 0}});
         }
+
     }
 }
