@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace CalculatedBlock
 {
-    public class Matematical_2: IMathematical
+    public class Matematical_2 : IMathematical
     {
         private Bitmap image;
         public double gradientAtPoint(int x, int y)
@@ -58,6 +58,5 @@ namespace CalculatedBlock
                     convolution += core[i, j] * operatorLaplace[j, i];
             return convolution;
         }
-    }
     }
 }
