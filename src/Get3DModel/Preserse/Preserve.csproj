@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="IPreserveOBJ.cs" />
     <Compile Include="IPreservePNG.cs" />
-    <Compile Include="Logger.cs" />
     <Compile Include="ObjWriter.cs" />
     <Compile Include="Point3D.cs" />
     <Compile Include="PreserveOBJ.cs" />
