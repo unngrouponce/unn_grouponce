@@ -21,8 +21,8 @@ namespace Get3DModel
         static void Main(string[] args)
         {
             IParser parser = new Parser();
-            ICalculated calculated = new Calculated();
-           // ICalculated calculated = new CalculatedNull();
+            ICalculated calculated = new Calculated(); //используется класс MathematicalDefault 
+            //ICalculated calculated = new Calculated(new MathematicalOption1()); 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
             Setting setting = null;
