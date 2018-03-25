@@ -34,7 +34,7 @@ namespace CalculatedBlock
                 swingSharpness = new double[image.width(), image.height()];
                 for (int x = 0; x < image.width(); x++)
                     for (int y = 0; y < image.width(); y++)
-                        swingSharpness[x,y] = -255;
+                        swingSharpness[x,y] = 0;
             }
 
             List<Data.Point> listPoint = new List<Data.Point>();
@@ -51,7 +51,7 @@ namespace CalculatedBlock
                         swingSharpness[x, y] = gradient;
                     }
                 }
-            solution.binarization();
+            //solution.binarization();
             solution.setValue(listPoint, image);
         }
 
