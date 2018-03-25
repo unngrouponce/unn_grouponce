@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Data;
 namespace CalculatedBlock
 {
-    class Mathematical : IMathematical
+    class Mathematical_1 : IMathematical
     {
         private Bitmap image;
         public double gradientAtPoint(int x, int y)

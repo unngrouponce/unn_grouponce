@@ -46,7 +46,8 @@
     <Compile Include="ICalculated.cs" />
     <Compile Include="IChangeImage.cs" />
     <Compile Include="IMathematical.cs" />
-    <Compile Include="Mathematical.cs" />
+    <Compile Include="Matematical_2.cs" />
+    <Compile Include="Mathematical_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

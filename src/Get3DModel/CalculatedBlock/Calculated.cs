@@ -18,7 +18,7 @@ namespace CalculatedBlock
         public Calculated()
         {
             changeImage = new ChangeImage();
-            matematical = new Mathematical();
+            matematical = new Mathematical_1();
         }
 
         public void createdBeginSolution()
