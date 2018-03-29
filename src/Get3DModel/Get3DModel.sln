@@ -16,8 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsingInputData", "Parsing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preserve", "Preserse\Preserve.csproj", "{BB2C3860-31D9-4C88-8F39-ECCD1674D025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator", "Validator\Validator.csproj", "{C0C19AB9-3BF8-479A-9458-DCD83F70CB46}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,10 +42,6 @@ Global
 		{BB2C3860-31D9-4C88-8F39-ECCD1674D025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB2C3860-31D9-4C88-8F39-ECCD1674D025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB2C3860-31D9-4C88-8F39-ECCD1674D025}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0C19AB9-3BF8-479A-9458-DCD83F70CB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0C19AB9-3BF8-479A-9458-DCD83F70CB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0C19AB9-3BF8-479A-9458-DCD83F70CB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0C19AB9-3BF8-479A-9458-DCD83F70CB46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
