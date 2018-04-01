@@ -21,7 +21,7 @@ namespace ParsingInputData
                 var _FWIDTH = Convert.ToDouble(new Regex(@"w=(\d+)").Match(conf).Groups[1].ToString());
                 res["FDISTANCE"] = _FDISTANCE;
                 res["FWIDTH"] = _FWIDTH;
-                res["HCOEFF"] = 0;
+                res["HCOEFF"] = 1;
             }
             catch
             {
