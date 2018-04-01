@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Data;
@@ -45,6 +45,7 @@ namespace Get3DModel.UnitTests
 
             //act
             s.createdBeginSolution(w, h);
+
            
             //assert
             for (int i = 0; i < w; i++)
