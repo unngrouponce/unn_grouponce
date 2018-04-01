@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Data;
@@ -46,10 +46,11 @@ namespace Get3DModel.UnitTests
             //act
             s.createdBeginSolution(w, h);
 
+           
             //assert
             for (int i = 0; i < w; i++)
                 for (int j = 0; j < h; j++)
-                    Assert.AreEqual(s.sharpImage.GetPixel(i, j), exepected_color);
+                    Assert.AreEqual(s.sharpImage.GetPixel(i, j).ToArgb(), exepected_color.ToArgb());
         }
 
         [TestMethod]

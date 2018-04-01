@@ -60,7 +60,8 @@ namespace Data
         }
 
         public Bitmap sharpImage { get { return _sharpImage; } }
-
+        public int Height{ get { return _sharpImage.Height; }}
+        public int Width{ get { return _sharpImage.Width; }}
         public double getValue(int x, int y) { return mapHeights[x, y]; }
     }
 }
