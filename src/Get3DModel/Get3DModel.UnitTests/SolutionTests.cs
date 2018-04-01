@@ -45,7 +45,6 @@ namespace Get3DModel.UnitTests
 
             //act
             s.createdBeginSolution(w, h);
-
            
             //assert
             for (int i = 0; i < w; i++)
