@@ -21,6 +21,7 @@ namespace Get3DModel
         static void Main(string[] args)
         {
             IParser parser = new Parser();
+            HashSet <string> CommandLineParams= new HashSet<string>(args);
             ICalculated calculated = new Calculated(); //используется класс MathematicalDefault 
             //ICalculated calculated = new Calculated(new MathematicalOption1()); 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
@@ -63,8 +64,9 @@ namespace Get3DModel
             Solution solution = calculated.getSolution();
             Console.WriteLine("saving data was started");
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
+           if(CommandLineParams.Contains("-d")) PreserveOBJ.saveDat(solution.Map, pathFolder);
             preservePNG.savePNG(solution, pathFolder);
-            Console.Read();//temporary 
+           // Console.Read();//temporary 
         }
     }
 }
