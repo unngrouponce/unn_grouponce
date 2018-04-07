@@ -63,5 +63,6 @@ namespace Data
         public int Height{ get { return _sharpImage.Height; }}
         public int Width{ get { return _sharpImage.Width; }}
         public double getValue(int x, int y) { return mapHeights[x, y]; }
+        public double[,] Map { get { return mapHeights; } }
     }
 }

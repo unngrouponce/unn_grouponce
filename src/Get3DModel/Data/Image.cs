@@ -191,5 +191,21 @@ namespace Data
             }
             return _image;
         }
+        public double ConvolutionAtPoint(int x, int y, double[,] matrix)
+        {
+            var w = matrix.GetLength(0);
+            var h = matrix.GetLength(1);
+            double r = 0d;
+            using (var wr = new Image((Bitmap)_image.Clone()) { DefaultColor = Color.Silver })
+            {
+                for (int i = 0; i < w; i++)
+                    for (int j = 0; j < h; j++)
+                    {
+                        var pixel = wr[x + i - 1, y + j - 1];
+                        r += matrix[j, i] * pixel.R;
+                    }
+            }
+            return r;
+        }
     }
 }
