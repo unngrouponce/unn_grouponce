@@ -33,9 +33,9 @@ namespace Data
 
             public Setting(string pathConfig)
             {
-            //IParser parser = new Parser();
-            //Dictionary<string, double> mapSetting = parser.readConfig(pathConfig);
-            Dictionary<string, double> mapSetting = Parser.readConfig(pathConfig);
+            IParser parser = new Parser();
+            Dictionary<string, double> mapSetting = parser.readConfig(pathConfig);
+            
 
             if (!mapSetting.TryGetValue("FDISTANCE", out _FDISTANCE))
                     Console.WriteLine("Error: Not found setting FDISTANCE");

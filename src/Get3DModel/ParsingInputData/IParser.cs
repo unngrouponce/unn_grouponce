@@ -16,11 +16,11 @@ namespace ParsingInputData
         /// Читает config файл и возвращает (переменная,значение)
         /// </summary>
         /// <param name="path">Путь к папке</param>
-   //     Dictionary<string, double> readConfig(string path);
+        Dictionary<string, double> readConfig(string path);
         /// <summary>
         /// Читает png файл и возвращает карту цветов
         /// </summary>
         /// <param name="path">Путь к папке</param>
-   //     Bitmap readPNG(string path);
+       Bitmap readPNG(string path);
     }
 }

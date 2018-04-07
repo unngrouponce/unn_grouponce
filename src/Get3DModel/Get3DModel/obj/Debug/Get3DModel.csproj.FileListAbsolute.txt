@@ -13,3 +13,17 @@ C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DMode
 C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.exe
 C:\Users\Саша\Desktop\star\dev\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.pdb
 C:\Users\Саша\Desktop\star\master\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe.config
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.csprojResolveAssemblyReference.cache
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe.config
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.pdb
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\CalculatedBlock.dll
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Data.dll
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\ParsingInputData.dll
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Preserse.dll
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\CalculatedBlock.pdb
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Data.pdb
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\ParsingInputData.pdb
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Preserse.pdb
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.exe
+C:\Users\Саша\Desktop\star\unn_grouponce\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.pdb
