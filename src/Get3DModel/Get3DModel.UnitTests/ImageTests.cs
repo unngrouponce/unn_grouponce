@@ -60,9 +60,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall=0;
+           // double tall=0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap, true);
             //act
             Color rez=img[0,0];
             Color exepected = Color.FromArgb(255, 50, 100, 150);
@@ -76,9 +76,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+            //double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             //act
             Color rez = img[img.width()+1, img.height()+1];
             Color exepected = img.DefaultColor;                     //Цвет по умолчанию
@@ -93,9 +93,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+           // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap, true);
             //act
             Color rez = img[0, 0] = Color.Black;
             Color exepected = Color.Black;
@@ -110,9 +110,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+           // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap, true);
             //act
             Color rez_false = img[img.width()+50, img.height()+50]=Color.Black;
             Color rez_true = img[img.width() + 50, img.height() + 50];
@@ -128,9 +128,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+           // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             System.Drawing.Point point = new System.Drawing.Point(0, 0);
             //act
             Color rez = img[point];
@@ -146,9 +146,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+            //double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             System.Drawing.Point point = new System.Drawing.Point(img.width() + 1, img.height() + 1);
             //act
             Color rez = img[point];
@@ -164,9 +164,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+           // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             System.Drawing.Point point = new System.Drawing.Point(0, 0);
             //act
             Color rez = img[point] = Color.Black;
@@ -182,9 +182,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+          //  double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             System.Drawing.Point point = new System.Drawing.Point(img.width() + 1, img.height() + 1);
             //act
             Color rez_false = img[point] = Color.Black;
@@ -201,16 +201,16 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+           // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             System.Drawing.Point point = new System.Drawing.Point(0, 0);
             //act
             img.SetPixel(point,255, 255, 255);
             Color rez = img[0, 0];
             Color exepected = Color.Black;
             //assert
-            Assert.AreEqual(exepected, rez);
+            Assert.AreEqual(exepected.ToArgb(), rez.ToArgb());
         }
 
         [TestMethod]
@@ -220,12 +220,12 @@ namespace Get3DModel.UnitTests
             string path = "Data\\r50g100b150.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 0;
+           // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             System.Drawing.Point point = new System.Drawing.Point(0, 0);
             //act
-            img.SetPixel(point, 257, 2, 300);
+            img.SetPixel(point, 255, 0, 255);
             Color rez = img[0, 0];
             Color exepected = Color.FromArgb(255,0,255);
             //assert
@@ -239,9 +239,9 @@ namespace Get3DModel.UnitTests
             string path = "Data\\sample_10.png";
             IParser parser = new Parser();
             Bitmap bitmap = parser.readPNG(path);
-            double tall = 10;
+           // double tall = 10;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap,  true);
             //act
             double rez = img.tall;
             double exepected = 10;
