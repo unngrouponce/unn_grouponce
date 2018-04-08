@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Data">
-      <HintPath>..\Data\bin\Debug\Data.dll</HintPath>
+      <HintPath>..\..\..\..\Kulikov\src\Get3DModel\Data\bin\Debug\Data.dll</HintPath>
     </Reference>
     <Reference Include="ParsingInputData">
-      <HintPath>..\Data\bin\Debug\ParsingInputData.dll</HintPath>
+      <HintPath>..\..\..\..\Kulikov\src\Get3DModel\Data\bin\Debug\ParsingInputData.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
