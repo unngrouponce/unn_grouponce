@@ -22,7 +22,6 @@ namespace Data
         /// Цвет по-умолачнию (используется при выходе координат за пределы изображения)
         /// </summary>
         public Color DefaultColor { get; set; }
-
         private byte[] data;//буфер исходного изображения
         private byte[] outData;//выходной буфер
         private int stride;
@@ -51,6 +50,7 @@ namespace Data
         {
 
             this._image = image;
+            this._tall = tall;
 
             bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
             stride = bmpData.Stride;
@@ -185,7 +185,7 @@ namespace Data
                             g += matrix[j, i] * pixel.G;
                             b += matrix[j, i] * pixel.B;
                         }
-                    wr.SetPixel(p, r, g, b);
+                    wr.SetPixel(p, Math.Abs(r), g, b);
                 }
                 _image = wr.image;
             }

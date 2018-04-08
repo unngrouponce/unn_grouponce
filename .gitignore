@@ -9,3 +9,4 @@
 *.dll
 *.suo 
 *.CopyComplete
+src/Get3DModel/Get3DModel.UnitTests/Get3DModel.UnitTests.csproj

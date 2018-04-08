@@ -15,19 +15,19 @@ namespace Get3DModel.UnitTests
         [TestMethod]
         public void readConfigTest_СorrectFile()              //Считывания корректного файла настроек по указанному пути
         {
-            
+
             //arrange
             IParser parser = new Parser();
-            string path = "ParsingInputData\\sample.camera";
+            string path = "Parser\\sample.camera";
             Dictionary<string, double> res = new Dictionary<string, double>();        //Результат
             Dictionary<string, double> exepected = new Dictionary<string, double>();  //Ожидаемый результат
             exepected.Add("FDISTANCE", 300);
             exepected.Add("FWIDTH", 75);
             exepected.Add("HCOEFF", 1);
-            
+
             //act
             res = parser.readConfig(path);
-           
+
             //assert
             Debug.WriteLine("Проверка размеров словарей!");
             Assert.AreEqual(res.Count, exepected.Count);
@@ -44,7 +44,7 @@ namespace Get3DModel.UnitTests
         {
             //arrange
             IParser parser = new Parser();
-            string path = "ParsingInputData\\sample2.camera";
+            string path = "Parser\\sample2.camera";
             Dictionary<string, double> res = new Dictionary<string, double>();        //Результат
 
             //act
@@ -57,7 +57,7 @@ namespace Get3DModel.UnitTests
         [TestMethod]
         public void readConfigTest_InсorrectSmallFile() //Cчитывание некорректного файла настроек - количество строк меньше 2-ух
         {
-            
+
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace Get3DModel.UnitTests
             //arrange
 
             IParser parser = new Parser();
-            string path = "ParsingInputData\\sample_01.png";
+            string path = "Parser\\sample_01.png";
             //Bitmap exepected = new Bitmap(path);        //Результат
 
             //act
@@ -87,7 +87,5 @@ namespace Get3DModel.UnitTests
                 for (int j = 0; j < rez.Height; j++)
                     Assert.AreEqual(rez.GetPixel(i, j), Color.FromArgb(0, 0, 0));
         }
-
-       
     }
 }
