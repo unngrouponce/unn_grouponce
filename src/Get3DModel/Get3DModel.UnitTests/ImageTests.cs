@@ -203,12 +203,12 @@ namespace Get3DModel.UnitTests
             Bitmap bitmap = parser.readPNG(path);
            // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap,  true);
+            Data.Image img = new Data.Image(bitmap);
             System.Drawing.Point point = new System.Drawing.Point(0, 0);
             //act
             img.SetPixel(point,255, 255, 255);
             Color rez = img[0, 0];
-            Color exepected = Color.Black;
+            Color exepected = Color.White;
             //assert
             Assert.AreEqual(exepected.ToArgb(), rez.ToArgb());
         }
@@ -222,7 +222,7 @@ namespace Get3DModel.UnitTests
             Bitmap bitmap = parser.readPNG(path);
            // double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap,  true);
+            Data.Image img = new Data.Image(bitmap);
             System.Drawing.Point point = new System.Drawing.Point(0, 0);
             //act
             img.SetPixel(point, 255, 0, 255);
@@ -232,22 +232,8 @@ namespace Get3DModel.UnitTests
             Assert.AreEqual(exepected, rez);
         }
 
-        [TestMethod]
-        public void tallTest()                        //Проверка считывания высоты изображения при создании объекта с помощью конструктора Image(Bitmap image, double tall = 0, bool copySourceToOutput = false)
-        {
-            //arrange
-            string path = "Data\\sample_10.png";
-            IParser parser = new Parser();
-            Bitmap bitmap = parser.readPNG(path);
-           // double tall = 10;
-
-            Data.Image img = new Data.Image(bitmap,  true);
-            //act
-            double rez = img.tall;
-            double exepected = 10;
-            //assert
-            Assert.AreEqual(exepected, rez);
-        }
+       
+       
 
         [TestMethod]
         public void tall2Test()                        //Проверка считывания высоты изображения при создании объекта конструктором Image(path)

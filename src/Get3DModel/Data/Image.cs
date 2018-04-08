@@ -47,7 +47,7 @@ namespace Data
         /// Создание обертки поверх bitmap.
         /// </summary>
         /// <param name="copySourceToOutput">Копирует исходное изображение в выходной буфер</param>
-        public Image(Bitmap image, bool copySourceToOutput = false)
+        public Image(Bitmap image, bool copySourceToOutput = true)
         {
 
             this._image = image;
@@ -82,7 +82,7 @@ namespace Data
             get
             {
                 var i = GetIndex(x, y);
-                return i < 0 ? DefaultColor : Color.FromArgb(data[i + 3], data[i + 2], data[i + 1], data[i]);
+                return i < 0 ? DefaultColor : Color.FromArgb(outData[i + 3], outData[i + 2], outData[i + 1], outData[i]);
             }
 
             set
