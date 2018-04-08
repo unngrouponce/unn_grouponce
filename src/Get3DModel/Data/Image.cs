@@ -186,7 +186,7 @@ namespace Data
                             g += matrix[j, i] * pixel.G;
                             b += matrix[j, i] * pixel.B;
                         }
-                    wr.SetPixel(p, r, g, b);
+                    wr.SetPixel(p, Math.Abs(r), g, b);
                 }
                 _image = wr.image;
             }
