@@ -204,7 +204,7 @@ namespace Data
                         r += matrix[j, i] * pixel.R;
                     }
             }
-            return r;
+            return Math.Abs(r);
         }
     }
 }
