@@ -47,12 +47,10 @@ namespace Data
         /// Создание обертки поверх bitmap.
         /// </summary>
         /// <param name="copySourceToOutput">Копирует исходное изображение в выходной буфер</param>
-        public Image(Bitmap image, double tall = 0, bool copySourceToOutput = false)
+        public Image(Bitmap image, bool copySourceToOutput = false)
         {
 
             this._image = image;
-            this._tall = tall;
-
             bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
             stride = bmpData.Stride;
 
