@@ -52,6 +52,7 @@ namespace Data
         {
 
             this._image = image;
+            this._tail = tail;
 
             bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
             stride = bmpData.Stride;
