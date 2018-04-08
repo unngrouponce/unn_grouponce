@@ -80,7 +80,7 @@ namespace Get3DModel.UnitTests
             Bitmap bitmap = parser.readPNG(path);
             double tall = 0;
 
-            Data.Image img = new Data.Image(bitmap, tall, true);
+            Data.Image img = new Data.Image(bitmap, tall, true) { DefaultColor = Color.Silver };
             //act
             Color rez = img[img.width()+1, img.height()+1];
             Color exepected = Color.Silver;                     //Цвет по умолчанию
