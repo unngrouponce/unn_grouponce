@@ -40,7 +40,9 @@ namespace Get3DModel
                 x => x.EndsWith(".camera") || x.EndsWith(".ini") || x.EndsWith("ConfigurationFile.txt"));
             FileInfo fileInf = new FileInfo(pathConfig);
             if (fileInf.Exists)
-                setting = new Setting(pathConfig);
+            {setting = new Setting(pathConfig);
+             Console.WriteLine("the verification of the optics configuration file completed successfully");
+            }
             else
             {
                 Console.WriteLine("the configuration file is not found");
