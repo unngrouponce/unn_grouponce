@@ -1,5 +1,6 @@
 # Get3DModel
 ## [Руководство по использованию багтрекера](./docs/Update/Kulikov/bugtracker.md)
+## [Релизы](https://github.com/unngrouponce/unn_grouponce/releases)
 ## [Команда](https://github.com/unngrouponce/unn_grouponce/wiki/Команда)
 ## Структура репозитория
 
