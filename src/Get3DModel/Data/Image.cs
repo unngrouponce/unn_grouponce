@@ -24,7 +24,7 @@ namespace Data
         /// </summary>
         public Color DefaultColor { get; set; }
         private byte[] data;//буфер исходного изображения
-        private byte[] outData;//выходной буфер
+        //private byte[] outData;//выходной буфер
         private int stride;
         private BitmapData bmpData;
 
@@ -46,8 +46,7 @@ namespace Data
         /// <summary>
         /// Создание обертки поверх bitmap.
         /// </summary>
-        /// <param name="copySourceToOutput">Копирует исходное изображение в выходной буфер</param>
-        public Image(Bitmap image, bool copySourceToOutput = true)
+        public Image(Bitmap image)
         {
 
             this._image = image;
@@ -57,7 +56,7 @@ namespace Data
             data = new byte[stride * image.Height];
             System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, data, 0, data.Length);
 
-            outData = copySourceToOutput ? (byte[])data.Clone() : new byte[stride * image.Height];
+
 
         }
 
@@ -82,7 +81,7 @@ namespace Data
             get
             {
                 var i = GetIndex(x, y);
-                return i < 0 ? DefaultColor : Color.FromArgb(outData[i + 3], outData[i + 2], outData[i + 1], outData[i]);
+                return i < 0 ? DefaultColor : Color.FromArgb(data[i + 3], data[i + 2], data[i + 1], data[i]);
             }
 
             set
@@ -90,11 +89,11 @@ namespace Data
                 var i = GetIndex(x, y);
                 if (i >= 0)
                 {
-                    outData[i] = value.B;
-                    outData[i + 1] = value.G;
-                    outData[i + 2] = value.R;
-                    outData[i + 3] = value.A;
-                };
+                    data[i] = value.B;
+                    data[i + 1] = value.G;
+                    data[i + 2] = value.R;
+                    data[i + 3] = value.A;
+                }
             }
         }
         /// <summary>
@@ -130,7 +129,7 @@ namespace Data
 
         public void Dispose()
         {
-            System.Runtime.InteropServices.Marshal.Copy(outData, 0, bmpData.Scan0, outData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(data, 0, bmpData.Scan0, data.Length);
             _image.UnlockBits(bmpData);
         }
 
@@ -152,19 +151,21 @@ namespace Data
         /// <summary>
         /// Меняет местами входной и выходной буферы
         /// </summary>
-        public void SwapBuffers()
+        /*public void SwapBuffers()
         {
             var temp = data;
             data = outData;
             outData = temp;
-        }
+        }*/
 
 
         /// <summary>
         /// Относительная высота на котором сделано изображение
         /// </summary>
         public double tall { get { return _tall; } }
-        public Bitmap image { get { return _image; } }
+        public Bitmap image { get {
+                return _image;
+            } }
         public Bitmap Convolution(double[,] matrix)
         {
             var w = matrix.GetLength(0);
