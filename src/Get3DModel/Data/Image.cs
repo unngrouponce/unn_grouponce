@@ -24,6 +24,10 @@ namespace Data
         /// </summary>
         public Color DefaultColor { get; set; }
         private byte[] data;//буфер исходного изображения
+<<<<<<< HEAD
+=======
+        //private byte[] outData;//выходной буфер
+>>>>>>> 9723ee46bc2aa832116aed72296dd60c88f4067b
         private int stride;
         private BitmapData bmpData;
 
@@ -57,7 +61,13 @@ namespace Data
             stride = bmpData.Stride;
             data = new byte[stride * image.Height];
             System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, data, 0, data.Length);
+<<<<<<< HEAD
             DefaultColor = Color.Silver;
+=======
+
+
+
+>>>>>>> 9723ee46bc2aa832116aed72296dd60c88f4067b
         }
         public Image(Image image):this(image.image){}
 
@@ -150,6 +160,20 @@ namespace Data
         }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Меняет местами входной и выходной буферы
+        /// </summary>
+        /*public void SwapBuffers()
+        {
+            var temp = data;
+            data = outData;
+            outData = temp;
+        }*/
+
+
+        /// <summary>
+>>>>>>> 9723ee46bc2aa832116aed72296dd60c88f4067b
         /// Относительная высота на котором сделано изображение
         /// </summary>
         public double tall { get { return _tall; } }
