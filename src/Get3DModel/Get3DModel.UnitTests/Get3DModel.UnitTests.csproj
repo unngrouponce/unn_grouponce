@@ -36,14 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CalculatedBlock">
-      <HintPath>..\Get3DModel\bin\Debug\CalculatedBlock.dll</HintPath>
-    </Reference>
     <Reference Include="Data">
       <HintPath>..\Data\bin\Debug\Data.dll</HintPath>
     </Reference>
     <Reference Include="ParsingInputData">
-      <HintPath>..\Get3DModel\bin\Debug\ParsingInputData.dll</HintPath>
+      <HintPath>..\Data\bin\Debug\ParsingInputData.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -69,6 +66,20 @@
     <Compile Include="PreservePNGTests.cs" />
     <Compile Include="SolutionTests.cs" />
     <Compile Include="ImageTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalculatedBlock\CalculatedBlock.csproj">
+      <Project>{b3a35c2c-a64c-4518-aac6-9906d42d1e98}</Project>
+      <Name>CalculatedBlock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Get3DModel\Get3DModel.csproj">
+      <Project>{3dded6e7-063a-4094-a126-52d91bc5e79a}</Project>
+      <Name>Get3DModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Preserse\Preserve.csproj">
+      <Project>{bb2c3860-31d9-4c88-8f39-eccd1674d025}</Project>
+      <Name>Preserve</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
