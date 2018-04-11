@@ -24,7 +24,6 @@ namespace Data
         /// </summary>
         public Color DefaultColor { get; set; }
         private byte[] data;//буфер исходного изображения
-        //private byte[] outData;//выходной буфер
         private int stride;
         private BitmapData bmpData;
 
@@ -41,7 +40,11 @@ namespace Data
             string name = infoImage.Name.Replace(".png", "");
             string[] nameSplit = name.Split('_');
             _tall = Convert.ToDouble(nameSplit[1]);
-
+            bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
+            stride = bmpData.Stride;
+            data = new byte[stride * image.Height];
+            System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, data, 0, data.Length);
+            DefaultColor = Color.Silver;
         }
         /// <summary>
         /// Создание обертки поверх bitmap.
@@ -52,13 +55,11 @@ namespace Data
             this._image = image;
             bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
             stride = bmpData.Stride;
-
             data = new byte[stride * image.Height];
             System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, data, 0, data.Length);
-
-
-
+            DefaultColor = Color.Silver;
         }
+        public Image(Image image):this(image.image){}
 
         /// <summary>
         /// Ширина изображения в пикселях
@@ -149,17 +150,6 @@ namespace Data
         }
 
         /// <summary>
-        /// Меняет местами входной и выходной буферы
-        /// </summary>
-        /*public void SwapBuffers()
-        {
-            var temp = data;
-            data = outData;
-            outData = temp;
-        }*/
-
-
-        /// <summary>
         /// Относительная высота на котором сделано изображение
         /// </summary>
         public double tall { get { return _tall; } }
@@ -196,7 +186,7 @@ namespace Data
             var w = matrix.GetLength(0);
             var h = matrix.GetLength(1);
             double r = 0d;
-            using (var wr = new Image((Bitmap)_image.Clone()) { DefaultColor = Color.Silver })
+            using (var wr = new Image((Bitmap)_image.Clone()))
             {
                 for (int i = 0; i < w; i++)
                     for (int j = 0; j < h; j++)

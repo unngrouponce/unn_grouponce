@@ -68,7 +68,7 @@ namespace Get3DModel
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
            if(CommandLineParams.Contains("-d")) PreserveOBJ.saveDat(solution.Map, pathFolder);
             preservePNG.savePNG(solution, pathFolder);
-           // Console.Read();//temporary 
+           
         }
     }
 }
