@@ -23,6 +23,7 @@ namespace Data
         /// </summary>
         public Color DefaultColor { get; set; }
         private byte[] data;//буфер исходного изображения
+        private byte[] outData;//выходной буфер
         private int stride;
         private BitmapData bmpData;
 
@@ -39,27 +40,27 @@ namespace Data
             string name = infoImage.Name.Replace(".png", "");
             string[] nameSplit = name.Split('_');
             _tall = Convert.ToDouble(nameSplit[1]);
-            bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
-            stride = bmpData.Stride;
-            data = new byte[stride * image.Height];
-            System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, data, 0, data.Length);
-            DefaultColor = Color.Silver;
+
         }
         /// <summary>
         /// Создание обертки поверх bitmap.
         /// </summary>
-        public Image(Bitmap image)
+        /// <param name="copySourceToOutput">Копирует исходное изображение в выходной буфер</param>
+        public Image(Bitmap image, double tall = 0, bool copySourceToOutput = false)
         {
 
             this._image = image;
+            this._tall = tall;
+
             bmpData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
             stride = bmpData.Stride;
+
             data = new byte[stride * image.Height];
             System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, data, 0, data.Length);
-            DefaultColor = Color.Silver;
+
+            outData = copySourceToOutput ? (byte[])data.Clone() : new byte[stride * image.Height];
 
         }
-        public Image(Image image):this(image.image){}
 
         /// <summary>
         /// Ширина изображения в пикселях
@@ -90,11 +91,11 @@ namespace Data
                 var i = GetIndex(x, y);
                 if (i >= 0)
                 {
-                    data[i] = value.B;
-                    data[i + 1] = value.G;
-                    data[i + 2] = value.R;
-                    data[i + 3] = value.A;
-                }
+                    outData[i] = value.B;
+                    outData[i + 1] = value.G;
+                    outData[i + 2] = value.R;
+                    outData[i + 3] = value.A;
+                };
             }
         }
         /// <summary>
@@ -130,7 +131,7 @@ namespace Data
 
         public void Dispose()
         {
-            System.Runtime.InteropServices.Marshal.Copy(data, 0, bmpData.Scan0, data.Length);
+            System.Runtime.InteropServices.Marshal.Copy(outData, 0, bmpData.Scan0, outData.Length);
             _image.UnlockBits(bmpData);
         }
 
@@ -150,12 +151,21 @@ namespace Data
         }
 
         /// <summary>
+        /// Меняет местами входной и выходной буферы
+        /// </summary>
+        public void SwapBuffers()
+        {
+            var temp = data;
+            data = outData;
+            outData = temp;
+        }
+
+
+        /// <summary>
         /// Относительная высота на котором сделано изображение
         /// </summary>
         public double tall { get { return _tall; } }
-        public Bitmap image { get {
-                return _image;
-            } }
+        public Bitmap image { get { return _image; } }
         public Bitmap Convolution(double[,] matrix)
         {
             var w = matrix.GetLength(0);
@@ -186,7 +196,7 @@ namespace Data
             var w = matrix.GetLength(0);
             var h = matrix.GetLength(1);
             double r = 0d;
-            using (var wr = new Image((Bitmap)_image.Clone()))
+            using (var wr = new Image((Bitmap)_image.Clone()) { DefaultColor = Color.Silver })
             {
                 for (int i = 0; i < w; i++)
                     for (int j = 0; j < h; j++)
@@ -195,33 +205,7 @@ namespace Data
                         r += matrix[j, i] * pixel.R;
                     }
             }
-            return Math.Abs(r);
-        }
-        public static double[,] GaussianKernel(int lenght, double weight)
-        {
-            double[,] kernel = new double[lenght, lenght];
-            double kernelSum = 0;
-            int foff = (lenght - 1) / 2;
-            double distance = 0;
-            double constant = 1d / (2 * Math.PI * weight * weight);
-            for (int y = -foff; y <= foff; y++)
-            {
-                for (int x = -foff; x <= foff; x++)
-                {
-                    distance = ((y * y) + (x * x)) / (2 * weight * weight);
-                    kernel[y + foff, x + foff] = constant * Math.Exp(-distance);
-                    kernelSum += kernel[y + foff, x + foff];
-                }
-            }
-            for (int y = 0; y < lenght; y++)
-            {
-                for (int x = 0; x < lenght; x++)
-                {
-                    kernel[y, x] = kernel[y, x] * 1d / kernelSum;
-                }
-            }
-            return kernel;
+            return r;
         }
     }
 }
-

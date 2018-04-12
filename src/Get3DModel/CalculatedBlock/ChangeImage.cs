@@ -15,7 +15,7 @@ namespace CalculatedBlock
             for (int y = 0; y < image.Height; ++y)
             for (int x = 0; x < image.Width; ++x)
              {
-                Color c = image.GetPixel(x, y);
+                Color c = ((Bitmap)image.Clone()).GetPixel(x, y);
                 byte rgb = (byte)(0.3 * c.R + 0.59 * c.G + 0.11 * c.B);
                  res.SetPixel(x, y, Color.FromArgb(c.A, rgb, rgb, rgb));
                 }
