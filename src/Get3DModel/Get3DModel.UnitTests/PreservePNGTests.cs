@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Data;
+using Preserse;
 
 namespace Get3DModel.UnitTests
 {
@@ -7,8 +9,17 @@ namespace Get3DModel.UnitTests
     public class PreservePNGTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void savePNGTest()      //Проверка сохранения OBJ файла
         {
+            //arrange
+            string path = "Solution";
+            Solution sol = new Solution();
+            sol.createdBeginSolution(100, 100);
+            PreservePNG PresPNG = new PreservePNG();
+            //act
+            PresPNG.savePNG(sol, path);
+            //assert
+            // Assert.AreEqual(exepected, rez);
         }
     }
 }
