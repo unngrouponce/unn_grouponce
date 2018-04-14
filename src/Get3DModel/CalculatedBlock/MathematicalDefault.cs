@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -18,9 +18,9 @@ namespace CalculatedBlock
         public void setImage(Bitmap image)
         {
             this.image = new Data.Image((Bitmap)image.Clone()).Convolution(new double[,]
-                             {{0, 1, 0},
-                              {1, -4, 1},
-                              {0, 1, 0}});
+                             {{1, 1, 1},
+                              {1, -8, 1},
+                              {1, 1, 1}});
         }
 
     }
