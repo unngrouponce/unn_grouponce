@@ -13,7 +13,7 @@ namespace Get3DModel.UnitTests
     public class ImageTests
     {
         [TestMethod]
-        public void widthTest()          //Проверка получения ширины изображения в пикселях
+        public void widthTest()            //Проверка получения ширины изображения в пикселях
         {
             //arrange
             Data.Image img = new Data.Image("Data\\sample_01.png");
@@ -26,7 +26,7 @@ namespace Get3DModel.UnitTests
         }
 
         [TestMethod]
-        public void heightTest()       //Проверка получения высоты изображения в пикселях
+        public void heightTest()         //Проверка получения высоты изображения в пикселях
         {
             //arrange
             Data.Image img = new Data.Image("Data\\sample_01.png");
@@ -53,7 +53,20 @@ namespace Get3DModel.UnitTests
                     Assert.AreEqual(img.GetPixel(i, j), Color.FromArgb(0, 0, 0));
         }
 
-        [TestMethod]
+         [TestMethod]
+        public void tallTest()                        //Проверка считывания высоты изображения при создании объекта конструктором Image(path)
+        {
+            //arrange
+            string path = "Data\\sample_01.png";
+            Data.Image img = new Data.Image(path);
+            //act
+            double rez = img.tall;
+            double exepected = 1;
+            //assert
+            Assert.AreEqual(exepected, rez);
+        }
+
+        /*[TestMethod]
         public void thisXYTest_GetInImage()                        //Проверка цвета  пикселя в обертке исходного изображения
         {
            // //arrange
@@ -232,22 +245,6 @@ namespace Get3DModel.UnitTests
            // Assert.AreEqual(exepected, rez);
         }
 
-       
-       
-
-        [TestMethod]
-        public void tall2Test()                        //Проверка считывания высоты изображения при создании объекта конструктором Image(path)
-        {
-            //arrange
-            string path = "Data\\sample_01.png";
-            Data.Image img = new Data.Image(path);
-            //act
-            double rez = img.tall;
-            double exepected = 1;
-            //assert
-            Assert.AreEqual(exepected, rez);
-        }
-
         [TestMethod]
         public void ConvolutionTest()                        //Проверка считывания высоты изображения при создании объекта конструктором Image(path)
         {
@@ -269,7 +266,7 @@ namespace Get3DModel.UnitTests
             Bitmap exepected = parser.readPNG(path);
             Bitmap rez = img.Convolution(matrix);
             //assert
-            Assert.AreEqual(exepected, rez);*/
-        }
+            Assert.AreEqual(exepected, rez);
+        }*/
     }
 }
