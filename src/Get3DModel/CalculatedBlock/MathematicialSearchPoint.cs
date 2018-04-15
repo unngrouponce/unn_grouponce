@@ -7,21 +7,26 @@ using System.Drawing;
 
 namespace CalculatedBlock
 {
-    public class MathematicalOption3 : IMathematical
+    public abstract class MathematicialSearchPoint:IMathematical
     {
-        private Bitmap image;
-        public double gradientAtPoint(int x, int y)
+        protected double[,] xMatrix;
+        protected double[,] yMatrix;
+        protected Bitmap image;
+
+        public MathematicialSearchPoint()
         {
-            double[,] core = getCore3x3(x, y);
-            return Gradient(core);
+            xMatrix = null;
+            yMatrix = null;
         }
 
-        public void setImage(Bitmap image)
+        public void setImage(System.Drawing.Bitmap image)
         {
             this.image = image;
         }
 
-        private double[,] getCore3x3(int x, int y)
+        abstract public double gradientAtPoint(int x, int y);
+
+        protected double[,] getCore3x3(int x, int y)
         {
             double[,] core = new double[3, 3];
             int[] indicesX = new int[3];
@@ -49,15 +54,24 @@ namespace CalculatedBlock
             return core;
         }
 
-        private double Gradient(double[,] core)
-        {
-            double[,] matrix = { { 1, 1, 1 }, { 1, -8, 1 }, { 1, 1, 1 } };
-            double convolution = 0;
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
-                    convolution += core[i, j] * matrix[j, i];
+        abstract public double calculation(double xConvolution, double yConvolution);
 
-            return convolution;
+        protected double Gradient3x3(double[,] core)
+        {
+            double xConvolution = 0;
+            double yConvolution = 0;
+
+            if (xMatrix!=null)
+                for (int i = 0; i < 3; i++)
+                    for (int j = 0; j < 3; j++)
+                        xConvolution += core[i, j] * xMatrix[j, i];
+
+            if (yMatrix != null)
+                for (int i = 0; i < 3; i++)
+                    for (int j = 0; j < 3; j++)
+                        yConvolution += core[i, j] * yMatrix[j, i];
+
+            return calculation(xConvolution, yConvolution);
         }
     }
 }
