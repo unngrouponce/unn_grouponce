@@ -21,6 +21,12 @@ namespace CalculatedBlock
         void clarifySolution(Image image);
 
         /// <summary>
+        /// Выполнить отсев
+        /// </summary>
+        /// <param name="delta">Процент</param>
+        void eliminationPoints(double delta);
+
+        /// <summary>
         /// Получить решение
         /// </summary>
         Solution getSolution();

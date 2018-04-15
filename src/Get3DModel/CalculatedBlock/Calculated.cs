@@ -16,6 +16,7 @@ namespace CalculatedBlock
         double[,] swingSharpness;
         double width;
         double height;
+        double thresholdDelta;
 
         public Calculated()
         {
@@ -67,6 +68,30 @@ namespace CalculatedBlock
         public Data.Solution getSolution()
         {
             return solution;
+        }
+
+
+        public void eliminationPoints(double delta)
+        {
+            List<Data.Point> listPoint = new List<Data.Point>();
+            double maxGradient = -255;
+            double minGradient = 255;
+
+            for (int i = 0; i < swingSharpness.GetUpperBound(0)+1; i++)
+                for (int j = 0; j < swingSharpness.GetUpperBound(1)+1; j++)
+                {
+                    if (maxGradient < swingSharpness[i, j]) maxGradient = swingSharpness[i, j];
+                    if (minGradient > swingSharpness[i, j]) minGradient = swingSharpness[i, j];
+                }
+
+            double threshold = minGradient + ((maxGradient - minGradient) * delta);
+
+            for (int x = 0; x < swingSharpness.GetUpperBound(0)+1; x++)
+                for (int y = 0; y < swingSharpness.GetUpperBound(1)+1; y++)
+                    if (swingSharpness[x,y]<threshold)
+                        listPoint.Add(new Data.Point(x, y));
+
+            solution.setValue(listPoint, Color.White);
         }
     }
 }

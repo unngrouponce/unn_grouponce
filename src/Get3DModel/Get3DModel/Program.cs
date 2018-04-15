@@ -22,11 +22,11 @@ namespace Get3DModel
         {
             IParser parser = new Parser();
             HashSet <string> CommandLineParams= new HashSet<string>(args);
-            ICalculated calculated = new Calculated(); //используется класс MathematicalDefault 
-            //ICalculated calculated = new Calculated(new MathematicalOption1()); 
+            ICalculated calculated = new Calculated(new MathematicialSearchPoint1()); 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
             Setting setting = null;
+            double delta = 0.0;
 
             List<string> filesImagesname;
             string pathFolder;
@@ -36,12 +36,16 @@ namespace Get3DModel
             pathFolder = args[0];
             filesImagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
 
+            if (args.Length > 1)
+                delta = Convert.ToDouble(args[1]);
+
             pathConfig = Directory.GetFiles(pathFolder).ToList().First(
                 x => x.EndsWith(".camera") || x.EndsWith(".ini") || x.EndsWith("ConfigurationFile.txt"));
             FileInfo fileInf = new FileInfo(pathConfig);
             if (fileInf.Exists)
-            {setting = new Setting(pathConfig);
-             Console.WriteLine("the verification of the optics configuration file completed successfully");
+            {
+                setting = new Setting(pathConfig);
+                Console.WriteLine("the verification of the optics configuration file completed successfully");
             }
             else
             {
@@ -62,12 +66,11 @@ namespace Get3DModel
                     string.Format("processing of the {0} has finished\n\telapsed time: {1} milliseconds",
                     filesImagesname[i], timeForParsing.Elapsed.Milliseconds));
             }
-
+            calculated.eliminationPoints(delta);
             Solution solution = calculated.getSolution();
             Console.WriteLine("saving data was started");
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
             preservePNG.savePNG(solution, pathFolder);
-           
         }
     }
 }

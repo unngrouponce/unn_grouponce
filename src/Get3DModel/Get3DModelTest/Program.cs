@@ -28,6 +28,7 @@ namespace Get3DModelTest
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
             Setting setting = null;
+            double delta = 0.0;
 
             List<string> filesImagesname;
             string pathFolder;
@@ -83,6 +84,10 @@ namespace Get3DModelTest
                         calculated = new Calculated(new MathematicialSearchPoint1());
                         break;
                 }
+                if (args.Length > 2)
+                {
+                    delta = Convert.ToDouble(args[2]);
+                }
             }
 
             string[] listFileFolder = Directory.GetDirectories(pathFolder);
@@ -117,13 +122,13 @@ namespace Get3DModelTest
                     Data.Image itemImage = new Data.Image(filesImagesname[i]);
                     calculated.clarifySolution(itemImage);
                 }
+                calculated.eliminationPoints(delta);
                 Solution solution = calculated.getSolution();
                 timeForParsing.Stop();
                 timeTxt.WriteLine(nameFolder + " - " + timeForParsing.Elapsed.Milliseconds);
                 preserveOBJ.saveOBJ(solution, setting, saveFolderCurrent);
                 preservePNG.savePNG(solution, saveFolderCurrent);
                 saveDat(solution.Map, saveFolderCurrent);
-
             }
             timeTxt.Close();
         }
