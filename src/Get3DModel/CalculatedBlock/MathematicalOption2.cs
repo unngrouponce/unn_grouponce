@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace CalculatedBlock
 {
-    public class MathematicalOption1 : IMathematical
+    public class MathematicalOption2 : IMathematical
     {
         private Bitmap image;
         public double gradientAtPoint(int x, int y)
@@ -51,8 +51,8 @@ namespace CalculatedBlock
 
         private double Gradient(double[,] core)
         {
-            double[,] xMatrix = { { 0, 1, 0 }, { 1, -4, 1 }, { 0, 1, 0 } };
-            double[,] yMatrix = { { 1, 0, 1 }, { 0, -4, 0 }, { 1, 0, 1 } };
+            double[,] xMatrix = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
+            double[,] yMatrix = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
             double xConvolution = 0;
             double yConvolution = 0;
             for (int i = 0; i < 3; i++)
@@ -62,7 +62,7 @@ namespace CalculatedBlock
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)
                     yConvolution += core[i, j] * yMatrix[j, i];
-            return (xConvolution + yConvolution) / 2;
+            return Math.Sqrt(xConvolution * xConvolution + yConvolution * yConvolution);
         }
     }
 }

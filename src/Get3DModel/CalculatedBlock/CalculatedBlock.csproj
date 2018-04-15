@@ -47,6 +47,10 @@
     <Compile Include="IMathematical.cs" />
     <Compile Include="MathematicalOption1.cs" />
     <Compile Include="MathematicalDefault.cs" />
+    <Compile Include="MathematicalOption2.cs" />
+    <Compile Include="MathematicalOption3.cs" />
+    <Compile Include="MathematicalOption4.cs" />
+    <Compile Include="MathematicalOption5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
