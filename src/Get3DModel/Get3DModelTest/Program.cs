@@ -48,10 +48,10 @@ namespace Get3DModelTest
             StreamWriter timeTxt = new StreamWriter(saveFolder+"\\time.txt");
 
             if (args.Length == 1)
-            { 
-                Console.WriteLine("strategy is chosen MathematicalDefault");
-                timeTxt.WriteLine("MathematicalDefault");
-                calculated = new Calculated();
+            {
+                Console.WriteLine("strategy is chosen MathematicialSearchPoint1");
+                timeTxt.WriteLine("MathematicialSearchPoint1");
+                calculated = new Calculated(new MathematicialSearchPoint1());
             }
             else
             {
@@ -79,8 +79,8 @@ namespace Get3DModelTest
                         calculated = new Calculated(new MathematicialSearchPoint5());
                         break;
                     default:
-                        timeTxt.WriteLine("MathematicalDefault");
-                        calculated = new Calculated();
+                        timeTxt.WriteLine("MathematicialSearchPoint1");
+                        calculated = new Calculated(new MathematicialSearchPoint1());
                         break;
                 }
             }

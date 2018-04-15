@@ -66,7 +66,6 @@ namespace Get3DModel
             Solution solution = calculated.getSolution();
             Console.WriteLine("saving data was started");
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
-           if(CommandLineParams.Contains("-d")) PreserveOBJ.saveDat(solution.Map, pathFolder);
             preservePNG.savePNG(solution, pathFolder);
            
         }

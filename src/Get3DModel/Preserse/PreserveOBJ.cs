@@ -24,23 +24,5 @@ namespace Preserse
                                         solution.getValue(x,y)*setting.HCOEFF));
             objWriter.addPoints(listPoint3D);
         }
-        public static void saveDat(double[,] map, string path)
-        {
-            FileStream fs = new FileStream(path+"//test2.dat", FileMode.Create);
-            BinaryFormatter formatter = new BinaryFormatter();
-            try
-            {
-                formatter.Serialize(fs, map);
-            }
-            catch (SerializationException e)
-            {
-                Console.WriteLine("Failed to serialize. Reason: " + e.Message);
-                throw;
-            }
-            finally
-            {
-                fs.Close();
-            }
-        }
     }
 }
