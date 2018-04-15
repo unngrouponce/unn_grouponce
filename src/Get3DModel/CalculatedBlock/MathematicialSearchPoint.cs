@@ -19,6 +19,9 @@ namespace CalculatedBlock
             yMatrix = null;
         }
 
+        public double[,] XMatrix { get { return xMatrix; } }
+        public double[,] YMatrix { get { return yMatrix; } }
+
         public void setImage(System.Drawing.Bitmap image)
         {
             this.image = image;
