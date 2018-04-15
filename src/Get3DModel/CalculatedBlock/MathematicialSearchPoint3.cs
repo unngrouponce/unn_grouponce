@@ -18,7 +18,7 @@ namespace CalculatedBlock
         public override double gradientAtPoint(int x, int y)
         {
             double[,] core = getCore3x3(x, y);
-            return Gradient3x3(core);
+            return Gradient(core);
         }
 
         public override double calculation(double xConvolution, double yConvolution)

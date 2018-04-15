@@ -48,11 +48,17 @@
     <Compile Include="IMathematical.cs" />
     <Compile Include="MathematicialSearchPoint1.cs" />
     <Compile Include="MathematicalDefault.cs" />
+    <Compile Include="MathematicialSearchPoint10.cs" />
+    <Compile Include="MathematicialSearchPoint11.cs" />
     <Compile Include="MathematicialSearchPoint2.cs" />
     <Compile Include="MathematicialSearchPoint3.cs" />
     <Compile Include="MathematicialSearchPoint4.cs" />
     <Compile Include="MathematicialSearchPoint5.cs" />
     <Compile Include="MathematicialSearchPoint.cs" />
+    <Compile Include="MathematicialSearchPoint6.cs" />
+    <Compile Include="MathematicialSearchPoint7.cs" />
+    <Compile Include="MathematicialSearchPoint8.cs" />
+    <Compile Include="MathematicialSearchPoint9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

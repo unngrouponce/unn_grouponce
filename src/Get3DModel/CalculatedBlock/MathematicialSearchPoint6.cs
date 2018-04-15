@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace CalculatedBlock
 {
-    public class MathematicialSearchPoint2 : MathematicialSearchPoint
+    public class MathematicialSearchPoint6 : MathematicialSearchPoint
     {
-        public MathematicialSearchPoint2()
+        public MathematicialSearchPoint6()
         {
-            double[,] currentX_Matrix = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
-            double[,] currentY_Matrix = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
+            double[,] currentX_Matrix = { { 1, 1, 0, -1, -1 }, { 1, 2, 0, -2, -1 }, { 2, 3, 0, -3, -2 },
+                                          { 1, 2, 0, -2, -1 }, { 1, 1, 0, -1, -1 } };
+            double[,] currentY_Matrix = { { -1, -1, -2, -1, -1 }, { -1, -2, -3, -2, -1 }, { 0, 0, 0, 0, 0 },
+                                          { 1, 2, 3, 2, 1 }, { 1, 1, 2, 1, 1 } };
             xMatrix = currentX_Matrix;
             yMatrix = currentY_Matrix;
         }
 
         public override double gradientAtPoint(int x, int y)
         {
-            double[,] core = getCore3x3(x, y);
+            double[,] core = getCore5x5(x, y);
             return Gradient(core);
         }
 
