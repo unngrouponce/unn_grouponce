@@ -45,12 +45,12 @@
     <Compile Include="ICalculated.cs" />
     <Compile Include="IChangeImage.cs" />
     <Compile Include="IMathematical.cs" />
-    <Compile Include="MathematicalOption1.cs" />
+    <Compile Include="MathematicialSearchPoint1.cs" />
     <Compile Include="MathematicalDefault.cs" />
-    <Compile Include="MathematicalOption2.cs" />
-    <Compile Include="MathematicalOption3.cs" />
-    <Compile Include="MathematicalOption4.cs" />
-    <Compile Include="MathematicalOption5.cs" />
+    <Compile Include="MathematicialSearchPoint2.cs" />
+    <Compile Include="MathematicialSearchPoint3.cs" />
+    <Compile Include="MathematicialSearchPoint4.cs" />
+    <Compile Include="MathematicialSearchPoint5.cs" />
     <Compile Include="MathematicialSearchPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
