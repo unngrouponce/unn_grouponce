@@ -21,7 +21,6 @@ namespace Get3DModel
         static void Main(string[] args)
         {
             IParser parser = new Parser();
-            HashSet <string> CommandLineParams= new HashSet<string>(args);
             ICalculated calculated = new Calculated(new MathematicialSearchPoint1()); 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
