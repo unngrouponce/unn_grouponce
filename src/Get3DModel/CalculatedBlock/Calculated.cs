@@ -86,8 +86,8 @@ namespace CalculatedBlock
 
             double threshold = minGradient + ((maxGradient - minGradient) * delta);
 
-            for (int x = 0; x < swingSharpness.GetUpperBound(0)+1; x++)
-                for (int y = 0; y < swingSharpness.GetUpperBound(1)+1; y++)
+            for (int x = 0; x < swingSharpness.GetLength(0); x++)
+                for (int y = 0; y < swingSharpness.GetLength(1); y++)
                     if (swingSharpness[x,y]<threshold)
                         listPoint.Add(new Data.Point(x, y));
 
