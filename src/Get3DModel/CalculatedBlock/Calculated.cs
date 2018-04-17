@@ -77,8 +77,8 @@ namespace CalculatedBlock
             double maxGradient = -255;
             double minGradient = 255;
 
-            for (int i = 0; i < swingSharpness.GetUpperBound(0)+1; i++)
-                for (int j = 0; j < swingSharpness.GetUpperBound(1)+1; j++)
+            for (int i = 0; i < swingSharpness.GetLength(0); i++)
+                for (int j = 0; j < swingSharpness.GetLength(1); j++)
                 {
                     if (maxGradient < swingSharpness[i, j]) maxGradient = swingSharpness[i, j];
                     if (minGradient > swingSharpness[i, j]) minGradient = swingSharpness[i, j];
