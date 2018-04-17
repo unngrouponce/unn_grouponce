@@ -21,10 +21,11 @@ namespace CalculatedBlock
         void clarifySolution(Image image);
 
         /// <summary>
-        /// Выполнить отсев
+        /// Уточнить решение
         /// </summary>
-        /// <param name="delta">Процент</param>
-        void eliminationPoints(double delta);
+        /// <param name="image">изображение для уточнения решения</param>
+        /// <param name="strategia">ядро для подсчета градиета</param>
+        void clarifySolution(Image image, IMathematical strategia);
 
         /// <summary>
         /// Получить решение

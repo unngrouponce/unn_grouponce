@@ -24,6 +24,8 @@ namespace Get3DModel
             ICalculated calculated = new Calculated(new MathematicialSearchPoint1()); 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
+            IElimination elimination = new Elimination();
+            IAnalysis analysis;
             Setting setting = null;
             double delta = 0.0;
 
@@ -52,6 +54,25 @@ namespace Get3DModel
                 Environment.Exit(-1);
             }
 
+            for (int i = 0; i < filesImagesname.Count; i++)
+            {
+                if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                elimination.calculateGradientImage(itemImage);
+            }
+            List<Data.Point> goodPoint = elimination.getSolution();
+
+            analysis = new Analysis(goodPoint);
+
+            for (int i = 0; i < filesImagesname.Count; i++)
+            {
+                if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                analysis.addImageAnalysis(itemImage);
+            }
+
+            List<IMathematical> coreGoodPoint = analysis.getCore();
+
             calculated.createdBeginSolution();
             Stopwatch timeForParsing = new Stopwatch();
             for (int i = 0; i < filesImagesname.Count; i++)
@@ -65,7 +86,6 @@ namespace Get3DModel
                     string.Format("processing of the {0} has finished\n\telapsed time: {1} milliseconds",
                     filesImagesname[i], timeForParsing.Elapsed.Milliseconds));
             }
-            calculated.eliminationPoints(delta);
             Solution solution = calculated.getSolution();
             Console.WriteLine("saving data was started");
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
