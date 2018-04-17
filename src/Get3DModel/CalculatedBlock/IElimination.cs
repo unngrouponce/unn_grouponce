@@ -16,7 +16,7 @@ namespace CalculatedBlock
         /// Подсчитать градиенты на картинке
         /// </summary>
         /// <param name="image">изображение для подсчета</param>
-        public void calculateGradientImage(Image image);
+        void calculateGradientImage(Image image);
 
         /// <summary>
         /// Получить "хорошие" точки
