@@ -21,6 +21,13 @@ namespace CalculatedBlock
         void clarifySolution(Image image);
 
         /// <summary>
+        /// Уточнить решение
+        /// </summary>
+        /// <param name="image">изображение для уточнения решения</param>
+        /// <param name="strategia">ядро для подсчета градиета</param>
+        void clarifySolution(Image image, IMathematical strategia);
+
+        /// <summary>
         /// Получить решение
         /// </summary>
         Solution getSolution();

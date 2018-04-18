@@ -21,12 +21,13 @@ namespace Get3DModel
         static void Main(string[] args)
         {
             IParser parser = new Parser();
-            HashSet <string> CommandLineParams= new HashSet<string>(args);
-            ICalculated calculated = new Calculated(); //используется класс MathematicalDefault 
-            //ICalculated calculated = new Calculated(new MathematicalOption1()); 
+            ICalculated calculated = new Calculated(new MathematicialSearchPoint1()); 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
+            IElimination elimination = new Elimination();
+            IAnalysis analysis;
             Setting setting = null;
+            double delta = 0.0;
 
             List<string> filesImagesname;
             string pathFolder;
@@ -36,18 +37,41 @@ namespace Get3DModel
             pathFolder = args[0];
             filesImagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
 
+            if (args.Length > 1)
+                delta = Convert.ToDouble(args[1]);
+
             pathConfig = Directory.GetFiles(pathFolder).ToList().First(
                 x => x.EndsWith(".camera") || x.EndsWith(".ini") || x.EndsWith("ConfigurationFile.txt"));
             FileInfo fileInf = new FileInfo(pathConfig);
             if (fileInf.Exists)
-            {setting = new Setting(pathConfig);
-             Console.WriteLine("the verification of the optics configuration file completed successfully");
+            {
+                setting = new Setting(pathConfig);
+                Console.WriteLine("the verification of the optics configuration file completed successfully");
             }
             else
             {
                 Console.WriteLine("the configuration file is not found");
                 Environment.Exit(-1);
             }
+
+            for (int i = 0; i < filesImagesname.Count; i++)
+            {
+                if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                elimination.calculateGradientImage(itemImage);
+            }
+            List<Data.Point> goodPoint = elimination.getSolution();
+
+            analysis = new Analysis(goodPoint);
+
+            for (int i = 0; i < filesImagesname.Count; i++)
+            {
+                if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                analysis.addImageAnalysis(itemImage);
+            }
+
+            List<IMathematical> coreGoodPoint = analysis.getCore();
 
             calculated.createdBeginSolution();
             Stopwatch timeForParsing = new Stopwatch();
@@ -62,13 +86,10 @@ namespace Get3DModel
                     string.Format("processing of the {0} has finished\n\telapsed time: {1} milliseconds",
                     filesImagesname[i], timeForParsing.Elapsed.Milliseconds));
             }
-
             Solution solution = calculated.getSolution();
             Console.WriteLine("saving data was started");
             preserveOBJ.saveOBJ(solution, setting, pathFolder);
-           if(CommandLineParams.Contains("-d")) PreserveOBJ.saveDat(solution.Map, pathFolder);
             preservePNG.savePNG(solution, pathFolder);
-           
         }
     }
 }

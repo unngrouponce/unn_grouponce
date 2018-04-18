@@ -17,10 +17,11 @@ namespace CalculatedBlock
 
         public void setImage(Bitmap image)
         {
-            this.image = new Data.Image((Bitmap)image.Clone()).Convolution(new double[,]
-                             {{1, 1, 1},
-                              {1, -8, 1},
-                              {1, 1, 1}});
+            this.image = image;
+            //this.image = new Data.Image((Bitmap)image.Clone()).Convolution(new double[,]
+            //                 {{1, 1, 1},
+            //                  {1, -8, 1},
+            //                  {1, 1, 1}});
         }
 
     }

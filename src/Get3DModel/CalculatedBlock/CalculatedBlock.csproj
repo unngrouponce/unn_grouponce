@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CalculatedBlock</RootNamespace>
     <AssemblyName>CalculatedBlock</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,13 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analysis.cs" />
     <Compile Include="Calculated.cs" />
     <Compile Include="ChangeImage.cs" />
+    <Compile Include="Elimination.cs" />
+    <Compile Include="IAnalysis.cs" />
     <Compile Include="ICalculated.cs" />
     <Compile Include="IChangeImage.cs" />
+    <Compile Include="IElimination.cs" />
     <Compile Include="IMathematical.cs" />
-    <Compile Include="MathematicalOption1.cs" />
+    <Compile Include="MathematicialSearchPoint1.cs" />
     <Compile Include="MathematicalDefault.cs" />
+    <Compile Include="MathematicialSearchPoint10.cs" />
+    <Compile Include="MathematicialSearchPoint11.cs" />
+    <Compile Include="MathematicialSearchPoint2.cs" />
+    <Compile Include="MathematicialSearchPoint3.cs" />
+    <Compile Include="MathematicialSearchPoint4.cs" />
+    <Compile Include="MathematicialSearchPoint5.cs" />
+    <Compile Include="MathematicialSearchPoint.cs" />
+    <Compile Include="MathematicialSearchPoint6.cs" />
+    <Compile Include="MathematicialSearchPoint7.cs" />
+    <Compile Include="MathematicialSearchPoint8.cs" />
+    <Compile Include="MathematicialSearchPoint9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
