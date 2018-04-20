@@ -42,3 +42,5 @@ C:/Users/Саша/Desktop/star/unn_grouponce/src/Get3DModel/Get3DModel/obj/Debug
 /Users/akulikov/Desktop/star/unn_grouponce/src/Get3DModel/Get3DModel/obj/Debug/Get3DModel.csproj.CoreCompileInputs.cache
 /Users/akulikov/Desktop/star/unn_grouponce/src/Get3DModel/Get3DModel/obj/Debug/Get3DModel.exe
 /Users/akulikov/Desktop/star/unn_grouponce/src/Get3DModel/Get3DModel/obj/Debug/Get3DModel.pdb
+F:\work\unn1\unn_grouponce\src\Get3DModel\Get3DModel\bin\Debug\Get3DModel.exe.config
+F:\work\unn1\unn_grouponce\src\Get3DModel\Get3DModel\obj\Debug\Get3DModel.csprojResolveAssemblyReference.cache
