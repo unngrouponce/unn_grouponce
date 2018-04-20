@@ -87,11 +87,13 @@ namespace CalculatedBlock
             }
             double probability = (double)1 / list.Count;
             double dispersion = 0;
+            double expectedValue = 0;
             foreach (double element in list)
             {
-                dispersion += Math.Pow(element, 2) * probability - Math.Pow(element * probability, 2);
+                dispersion += Math.Pow(element, 2) * probability;
+                expectedValue += element * probability;
             }
-            return dispersion;
+            return dispersion - Math.Pow(expectedValue, 2);
         }
     }
 }
