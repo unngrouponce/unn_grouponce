@@ -35,6 +35,7 @@ namespace Get3DModel
             if (args.Length == 0)
             { Console.WriteLine("usage: Get3DModel.exe <path to folder>"); Environment.Exit(-1); }
             pathFolder = args[0];
+
             filesImagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
 
             if (args.Length > 1)
@@ -54,6 +55,7 @@ namespace Get3DModel
                 Environment.Exit(-1);
             }
 
+            Stopwatch timeForParsing = new Stopwatch();
             for (int i = 0; i < filesImagesname.Count; i++)
             {
                 if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
@@ -61,26 +63,23 @@ namespace Get3DModel
                 elimination.calculateGradientImage(itemImage);
             }
             List<Data.Point> goodPoint = elimination.getSolution();
-
+          
             analysis = new Analysis(goodPoint);
-
             for (int i = 0; i < filesImagesname.Count; i++)
             {
                 if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
                 Data.Image itemImage = new Data.Image(filesImagesname[i]);
                 analysis.addImageAnalysis(itemImage);
             }
-
-            List<IMathematical> coreGoodPoint = analysis.getCore();
+            List<IMathematical> coreGoodPoint = analysis.getCore(); 
 
             calculated.createdBeginSolution();
-            Stopwatch timeForParsing = new Stopwatch();
             for (int i = 0; i < filesImagesname.Count; i++)
             {
                 if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
                 timeForParsing.Restart();
                 Data.Image itemImage = new Data.Image(filesImagesname[i]);
-                calculated.clarifySolution(itemImage);
+                calculated.clarifySolution(itemImage, coreGoodPoint, goodPoint);
                 timeForParsing.Stop();
                 Console.WriteLine(
                     string.Format("processing of the {0} has finished\n\telapsed time: {1} milliseconds",

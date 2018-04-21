@@ -13,7 +13,7 @@ namespace CalculatedBlock
         double[,] swingSharpness;
         IChangeImage changeImage;
         IMathematical matematical;
-        double delta;
+        double delta=0.1;
 
         public Elimination()
         {
@@ -68,7 +68,7 @@ namespace CalculatedBlock
 
             for (int x = 0; x < swingSharpness.GetLength(0); x++)
                 for (int y = 0; y < swingSharpness.GetLength(1); y++)
-                    if (swingSharpness[x, y] < threshold)
+                    if (swingSharpness[x, y] >= threshold)
                         result.Add(new Data.Point(x, y));
 
             return result;
