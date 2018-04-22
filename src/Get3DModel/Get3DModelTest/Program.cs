@@ -160,7 +160,7 @@ namespace Get3DModelTest
 
                 Solution solution = calculated.getSolution();
                 timeForParsing.Stop();
-                timeTxt.WriteLine(nameFolder + " - " + timeForParsing.Elapsed.Milliseconds + "timeForParsing");
+                timeTxt.WriteLine(nameFolder + " - " + timeForParsing.ElapsedMilliseconds + "timeForParsing");
                 preserveOBJ.saveOBJ(solution, setting, saveFolderCurrent);
                 preservePNG.savePNG(solution, saveFolderCurrent);
                 saveDat(solution.Map, saveFolderCurrent);
