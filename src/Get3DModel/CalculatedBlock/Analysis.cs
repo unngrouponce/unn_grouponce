@@ -13,9 +13,34 @@ namespace CalculatedBlock
         Dictionary<Point, List<double>> gradients3x3;
         Dictionary<Point, List<double>> gradients5x5;
         Dictionary<Point, List<double>> gradients7x7;
+
+        IMathematical matematical3x3;
+        IMathematical matematical5x5;
+        IMathematical matematical7x7;
+
         public Analysis(List<Data.Point> points)
         {
             pointAnalysis = points;
+            matematical3x3 = new MathematicialSearchPoint1();
+            matematical5x5 = new MathematicialSearchPoint8();
+            matematical7x7 = new MathematicialSearchPoint9();
+            gradients3x3 = new Dictionary<Point, List<double>>();
+            gradients5x5 = new Dictionary<Point, List<double>>();
+            gradients7x7 = new Dictionary<Point, List<double>>();
+            foreach (var point in pointAnalysis)
+            {
+                gradients3x3.Add(point, new List<double>());
+                gradients5x5.Add(point, new List<double>());
+                gradients7x7.Add(point, new List<double>());
+            }
+        }
+
+        public Analysis(List<Data.Point> points, IMathematical core3x3, IMathematical core5x5, IMathematical core7x7)
+        {
+            pointAnalysis = points;
+            matematical3x3 = core3x3;
+            matematical5x5 = core5x5;
+            matematical7x7 = core7x7;
             gradients3x3 = new Dictionary<Point, List<double>>();
             gradients5x5 = new Dictionary<Point, List<double>>();
             gradients7x7 = new Dictionary<Point, List<double>>();
@@ -29,9 +54,6 @@ namespace CalculatedBlock
 
         public void addImageAnalysis(Image image)
         {
-            IMathematical matematical3x3 = new MathematicialSearchPoint1();
-            IMathematical matematical5x5 = new MathematicialSearchPoint8();
-            IMathematical matematical7x7 = new MathematicialSearchPoint9();
             matematical3x3.setImage(image.image);
             matematical5x5.setImage(image.image);
             matematical7x7.setImage(image.image);
@@ -55,22 +77,22 @@ namespace CalculatedBlock
                 {
                     if (dispersion3x3 < dispersion7x7)
                     {
-                        cores.Add(new MathematicialSearchPoint1());
+                        cores.Add(matematical3x3);
                     }
                     else
                     {
-                        cores.Add(new MathematicialSearchPoint9());
+                        cores.Add(matematical7x7);
                     }
                 }
                 else
                 {
                     if (dispersion5x5 < dispersion7x7)
                     {
-                        cores.Add(new MathematicialSearchPoint8());
+                        cores.Add(matematical5x5);
                     }
                     else
                     {
-                        cores.Add(new MathematicialSearchPoint9());
+                        cores.Add(matematical7x7);
                     }
                 }
             }

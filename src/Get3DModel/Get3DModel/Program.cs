@@ -83,7 +83,7 @@ namespace Get3DModel
                 timeForParsing.Stop();
                 Console.WriteLine(
                     string.Format("processing of the {0} has finished\n\telapsed time: {1} milliseconds",
-                    filesImagesname[i], timeForParsing.Elapsed.Milliseconds));
+                    filesImagesname[i], timeForParsing.ElapsedMilliseconds));
             }
             Solution solution = calculated.getSolution();
             Console.WriteLine("saving data was started");

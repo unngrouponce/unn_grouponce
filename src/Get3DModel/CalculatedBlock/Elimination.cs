@@ -13,7 +13,6 @@ namespace CalculatedBlock
         double[,] swingSharpness;
         IChangeImage changeImage;
         IMathematical matematical;
-        double delta=0.1;
 
         public Elimination()
         {
@@ -36,7 +35,7 @@ namespace CalculatedBlock
                 swingSharpness = new double[image.width(), image.height()];
                 for (int x = 0; x < image.width(); x++)
                     for (int y = 0; y < image.height(); y++)
-                        swingSharpness[x, y] = 0;
+                        swingSharpness[x, y] = -255;
             }
 
             Bitmap curentImage = image.image;
@@ -64,6 +63,7 @@ namespace CalculatedBlock
                     if (minGradient > swingSharpness[i, j]) minGradient = swingSharpness[i, j];
                 }
 
+            double delta = matematical.getDeltaThreshold();
             double threshold = minGradient + ((maxGradient - minGradient) * delta);
 
             for (int x = 0; x < swingSharpness.GetLength(0); x++)

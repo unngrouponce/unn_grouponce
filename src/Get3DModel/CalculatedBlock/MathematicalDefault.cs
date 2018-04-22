@@ -24,5 +24,17 @@ namespace CalculatedBlock
             //                  {1, 1, 1}});
         }
 
+
+
+        public void setDeltaThreshold(double threshold)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public double getDeltaThreshold()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
