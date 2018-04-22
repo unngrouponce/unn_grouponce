@@ -12,11 +12,13 @@ namespace CalculatedBlock
         protected double[,] xMatrix;
         protected double[,] yMatrix;
         protected Bitmap image;
+        protected double deltaThreshold;
 
         public MathematicialSearchPoint()
         {
             xMatrix = null;
             yMatrix = null;
+            deltaThreshold = 0;
         }
 
         public double[,] XMatrix { get { return xMatrix; } }
@@ -25,6 +27,11 @@ namespace CalculatedBlock
         public void setImage(System.Drawing.Bitmap image)
         {
             this.image = image;
+        }
+
+        public void setDeltaThreshold(double threshold)
+        {
+            deltaThreshold = threshold;
         }
 
         abstract public double gradientAtPoint(int x, int y);
@@ -141,7 +148,13 @@ namespace CalculatedBlock
                     for (int j = 0; j < core.GetLength(0); j++)
                         yConvolution += core[i, j] * yMatrix[j, i];
 
-            return calculation(xConvolution, yConvolution);
+            return Math.Abs(calculation(xConvolution, yConvolution));
+        }
+
+
+        public double getDeltaThreshold()
+        {
+            return deltaThreshold;
         }
     }
 }
