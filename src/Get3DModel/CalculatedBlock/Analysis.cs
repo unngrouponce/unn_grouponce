@@ -7,7 +7,7 @@ using Data;
 
 namespace CalculatedBlock
 {
-    public class Analysis: IAnalysis
+    public class Analysis : IAnalysis
     {
         List<Data.Point> pointAnalysis;
         Dictionary<Point, List<double>> gradients3x3;

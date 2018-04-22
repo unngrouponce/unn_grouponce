@@ -25,7 +25,7 @@ namespace CalculatedBlock
         /// </summary>
         /// <param name="image">изображение для уточнения решения</param>
         /// <param name="strategia">ядро для подсчета градиета</param>
-        void clarifySolution(Image image, IMathematical strategia);
+        void clarifySolution(Data.Image image, List<IMathematical> coreGoodPoint, List<Data.Point> goodPoint);
 
         /// <summary>
         /// Получить решение

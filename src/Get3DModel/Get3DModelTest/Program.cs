@@ -27,6 +27,8 @@ namespace Get3DModelTest
             ICalculated calculated; 
             IPreserveOBJ preserveOBJ = new PreserveOBJ();
             IPreservePNG preservePNG = new PreservePNG();
+            IElimination elimination = new Elimination();
+            IAnalysis analysis;
             Setting setting = null;
             double delta = 0.0;
 
@@ -113,16 +115,33 @@ namespace Get3DModelTest
                     Environment.Exit(-1);
                 }
 
-                calculated.createdBeginSolution();
                 Stopwatch timeForParsing = new Stopwatch();
                 timeForParsing.Restart();
                 for (int i = 0; i < filesImagesname.Count; i++)
                 {
                     if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
                     Data.Image itemImage = new Data.Image(filesImagesname[i]);
-                    calculated.clarifySolution(itemImage);
+                    elimination.calculateGradientImage(itemImage);
                 }
-                calculated.eliminationPoints(delta);
+                List<Data.Point> goodPoint = elimination.getSolution();
+
+                analysis = new Analysis(goodPoint);
+                for (int i = 0; i < filesImagesname.Count; i++)
+                {
+                    if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                    Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                    analysis.addImageAnalysis(itemImage);
+                }
+                List<IMathematical> coreGoodPoint = analysis.getCore();
+
+                calculated.createdBeginSolution();
+                for (int i = 0; i < filesImagesname.Count; i++)
+                {
+                    if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
+                    Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                    calculated.clarifySolution(itemImage, coreGoodPoint, goodPoint);
+                }
+
                 Solution solution = calculated.getSolution();
                 timeForParsing.Stop();
                 timeTxt.WriteLine(nameFolder + " - " + timeForParsing.Elapsed.Milliseconds);

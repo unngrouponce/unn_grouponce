@@ -70,7 +70,7 @@ namespace CalculatedBlock
             return solution;
         }
 
-        public void clarifySolution(Data.Image image, IMathematical strategia)
+        public void clarifySolution(Data.Image image, List<IMathematical> coreGoodPoint, List<Data.Point> goodPoint)
         {
             if (swingSharpness == null)
             {
@@ -85,18 +85,19 @@ namespace CalculatedBlock
             List<Data.Point> listPoint = new List<Data.Point>();
             Bitmap curentImage = image.image;
             curentImage = changeImage.translateToMonochrome(curentImage);
-            matematical = strategia;
-            matematical.setImage(curentImage);
-            for (int x = 0; x < image.width(); x++)
-                for (int y = 0; y < image.height(); y++)
+            for (int i = 0; i < goodPoint.Count; i++ )
+            {
+                int x = goodPoint[i].x;
+                int y = goodPoint[i].y;
+                matematical = coreGoodPoint[i];
+                matematical.setImage(curentImage);
+                double gradient = matematical.gradientAtPoint(x, y);
+                if (gradient > swingSharpness[x, y])
                 {
-                    double gradient = matematical.gradientAtPoint(x, y);
-                    if (gradient > swingSharpness[x, y])
-                    {
-                        listPoint.Add(new Data.Point(x, y));
-                        swingSharpness[x, y] = gradient;
-                    }
+                    listPoint.Add(new Data.Point(x, y));
+                    swingSharpness[x, y] = gradient;
                 }
+            }
             solution.setValue(listPoint, image);
         }
     }
