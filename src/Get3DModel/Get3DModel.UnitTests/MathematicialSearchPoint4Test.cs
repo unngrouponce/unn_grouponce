@@ -24,8 +24,8 @@ namespace Get3DModel.UnitTests
 
             //assert
             Debug.WriteLine("Проверка ядер  свертки Gx и Gy");
-            for (int i = 1; i < 3; i++)
-                for (int j = 1; j < 3; j++)
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
                     Assert.AreEqual(exepectedG[i, j], actualG[i, j]);
         }
 
