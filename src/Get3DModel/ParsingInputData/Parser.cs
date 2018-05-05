@@ -31,10 +31,14 @@ namespace ParsingInputData
             return res;
         }
 
+        static Dictionary<string, Bitmap> cache=new Dictionary<string,Bitmap>();
         public System.Drawing.Bitmap readPNG(string path)
         {
+            if (cache.ContainsKey(path)) return cache[path];
             Console.WriteLine(string.Format("processing of the {0} image is started...", path));
-            return (Bitmap)Image.FromFile(path);
+            Bitmap tmp=(Bitmap)Image.FromFile(path);
+            if (cache.Count < 10) cache[path] = tmp;
+            return tmp;
         }
     }
 }
