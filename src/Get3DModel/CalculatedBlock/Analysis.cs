@@ -74,7 +74,7 @@ namespace CalculatedBlock
                 double dispersion3x3 = getDispersion(gradients3x3[point]);
                 double dispersion5x5 = getDispersion(gradients5x5[point]);
                 double dispersion7x7 = getDispersion(gradients7x7[point]);
-                lock(cores)
+                
                 if (dispersion3x3 < dispersion5x5)
                 {
                     if (dispersion3x3 < dispersion7x7)
