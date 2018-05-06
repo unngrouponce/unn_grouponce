@@ -54,7 +54,7 @@ namespace Get3DModel
             }
 
             Stopwatch timeForParsing = new Stopwatch();
-            for (int i = 0; i < filesImagesname.Count; i++)
+            for (int i = 0; i < filesImagesname.Count&&i<50; i++)
             {
                 if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
                 timeForParsing.Restart();
@@ -69,10 +69,10 @@ namespace Get3DModel
             List<Data.Point> goodPoint = elimination.getSolution();
           
             analysis = new Analysis(goodPoint);
-            // for (int i = 0; i < filesImagesname.Count; i++)
-            Parallel.For(0, filesImagesname.Count, i =>
+             for (int i = 0; i < filesImagesname.Count; i++)
+           // Parallel.For(0, filesImagesname.Count, i =>
              {
-                 if (filesImagesname[i].EndsWith("sharpImage.png")) return;//continue;
+                 if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
                  timeForParsing.Restart();
                  Data.Image itemImage = new Data.Image(filesImagesname[i]);
                 lock(analysis) analysis.addImageAnalysis(itemImage);
@@ -80,9 +80,11 @@ namespace Get3DModel
                  Console.WriteLine(
                      string.Format("analysing of the {0} has finished\n\telapsed time: {1} milliseconds",
                      filesImagesname[i], timeForParsing.ElapsedMilliseconds));
-             });
-            List<IMathematical> coreGoodPoint = analysis.getCore(); 
-
+             }//);
+            List<IMathematical> coreGoodPoint = analysis.getCore();
+            analysis = null;
+            elimination = null;
+            GC.Collect();
             calculated.createdBeginSolution();
             for (int i = 0; i < filesImagesname.Count; i++)
             {

@@ -29,6 +29,7 @@ namespace CalculatedBlock
             gradients7x7 = new Dictionary<Point, List<double>>();
             foreach (var point in pointAnalysis)
             {
+               
                 gradients3x3.Add(point, new List<double>());
                 gradients5x5.Add(point, new List<double>());
                 gradients7x7.Add(point, new List<double>());

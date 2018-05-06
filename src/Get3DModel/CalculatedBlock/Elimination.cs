@@ -17,7 +17,7 @@ namespace CalculatedBlock
         public Elimination()
         {
             changeImage = new ChangeImage();
-            matematical = new MathematicialSearchPoint1();
+            matematical = new MathematicialSearchPoint13();
             swingSharpness = null;
         }
 

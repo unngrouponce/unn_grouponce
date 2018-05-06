@@ -56,8 +56,6 @@
     <Compile Include="MathematicialSearchPoint11.cs" />
     <Compile Include="MathematicialSearchPoint12.cs" />
     <Compile Include="MathematicialSearchPoint13.cs" />
-    <Compile Include="MathematicialSearchPoint14.cs" />
-    <Compile Include="MathematicialSearchPoint15.cs" />
     <Compile Include="MathematicialSearchPoint2.cs" />
     <Compile Include="MathematicialSearchPoint3.cs" />
     <Compile Include="MathematicialSearchPoint4.cs" />
