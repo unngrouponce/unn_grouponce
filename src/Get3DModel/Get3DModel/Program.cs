@@ -21,38 +21,26 @@ namespace Get3DModel
         static void Main(string[] args)
         {
             IParser parser = new Parser();
+            ICalculated calculated = new Calculated(new MathematicialSearchPoint1());
+            IPreserveOBJ preserveOBJ = new PreserveOBJ();
+            IPreservePNG preservePNG = new PreservePNG();
+            IElimination elimination = new Elimination();
+            IAnalysis analysis;
+            Setting setting = null;
+            double delta = 0.0;
+
             List<string> filesImagesname;
             string pathFolder;
             string pathConfig;
             if (args.Length == 0)
             { Console.WriteLine("usage: Get3DModel.exe <path to folder>"); Environment.Exit(-1); }
             pathFolder = args[0];
+
             filesImagesname = Directory.GetFiles(pathFolder, "*.png").ToList<string>();
-            ICalculated calculated = new Calculated(new MathematicialSearchPoint1()); 
-            IPreserveOBJ preserveOBJ = new PreserveOBJ();
-            IPreservePNG preservePNG = new PreservePNG();
-            IElimination elimination;
-                if( new Data.Image(filesImagesname[0]).width()<1280)
-                  elimination= new Elimination();
-
-                else elimination = new Elimination(); //elimination=new RandomElimination();
-                
-           
-            
-            IAnalysis analysis;
-            Setting setting = null;
-            double delta = 0.0;
-
-           
-           
-
-           
-
-            if (args.Length > 1)
-                delta = Convert.ToDouble(args[1]);
+             if (args.Length > 1)delta = Convert.ToDouble(args[1]);
 
             pathConfig = Directory.GetFiles(pathFolder).ToList().First(
-                x => x.EndsWith(".camera") || x.EndsWith(".ini") || x.EndsWith("ConfigurationFile.txt"));
+                x => x.EndsWith(".camera"));
             FileInfo fileInf = new FileInfo(pathConfig);
             if (fileInf.Exists)
             {
@@ -81,17 +69,18 @@ namespace Get3DModel
             List<Data.Point> goodPoint = elimination.getSolution();
           
             analysis = new Analysis(goodPoint);
-            for (int i = 0; i < filesImagesname.Count; i++)
-            {
-                if (filesImagesname[i].EndsWith("sharpImage.png")) continue;
-                timeForParsing.Restart();
-                Data.Image itemImage = new Data.Image(filesImagesname[i]);
-                analysis.addImageAnalysis(itemImage);
-                timeForParsing.Stop();
-                Console.WriteLine(
-                    string.Format("analysing of the {0} has finished\n\telapsed time: {1} milliseconds",
-                    filesImagesname[i], timeForParsing.ElapsedMilliseconds));
-            }
+            // for (int i = 0; i < filesImagesname.Count; i++)
+            Parallel.For(0, filesImagesname.Count, i =>
+             {
+                 if (filesImagesname[i].EndsWith("sharpImage.png")) return;//continue;
+                 timeForParsing.Restart();
+                 Data.Image itemImage = new Data.Image(filesImagesname[i]);
+                lock(analysis) analysis.addImageAnalysis(itemImage);
+                 timeForParsing.Stop();
+                 Console.WriteLine(
+                     string.Format("analysing of the {0} has finished\n\telapsed time: {1} milliseconds",
+                     filesImagesname[i], timeForParsing.ElapsedMilliseconds));
+             });
             List<IMathematical> coreGoodPoint = analysis.getCore(); 
 
             calculated.createdBeginSolution();

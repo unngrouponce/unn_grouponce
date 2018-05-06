@@ -24,7 +24,7 @@ namespace Data
         {
             IParser parser = new Parser();
             _image = parser.readPNG(pathImage);
-
+            if (pathImage.EndsWith("sharpImage.png")) return;
             FileInfo infoImage = new FileInfo(pathImage);
             string name = infoImage.Name.Replace(".png", "");
             string[] nameSplit = name.Split('_');

@@ -16,7 +16,7 @@ namespace CalculatedBlock
         double[,] swingSharpness;
         double width;
         double height;
-        double thresholdDelta;
+        //double thresholdDelta;
 
         public Calculated()
         {

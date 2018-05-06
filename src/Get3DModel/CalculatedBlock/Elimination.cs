@@ -41,7 +41,8 @@ namespace CalculatedBlock
             curentImage = image.image;
             curentImage = changeImage.translateToMonochrome(curentImage);
             matematical.setImage(curentImage);
-          /*  for (int x = 0; x < image.width(); x++)
+          /*
+           for (int x = 0; x < image.width(); x++)
                 for (int y = 0; y < image.height(); y++)
                 {
                     double gradient = matematical.gradientAtPoint(x, y);
@@ -49,8 +50,8 @@ namespace CalculatedBlock
                         swingSharpness[x, y] = gradient;
                 }
            */
-            Parallel.For(0, 3, calculateGradientImage);
-            GC.Collect();
+            Parallel.For(0, 4, calculateGradientImage);
+
         }
         void calculateGradientImage(int sector) 
         {

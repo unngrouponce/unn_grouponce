@@ -135,6 +135,45 @@ namespace CalculatedBlock
                 }
             return core;
         }
+        protected double[,] getCore9x9(int x, int y)
+        {
+            double[,] core = new double[9, 9];
+            int[] indicesX = new int[9];
+            indicesX[0] = x <= 3 ? -1 : x - 4;
+            indicesX[1] = x <= 2 ? -1 : x - 3;
+            indicesX[2] = x <= 1 ? -1 : x - 2;
+            indicesX[3] = x== 0 ? -1 : x - 1;
+            indicesX[4] = x;
+            indicesX[5] = x >= image.GetLength(0) - 1 ? -1 : x + 1;
+            indicesX[6] = x >= image.GetLength(0) - 2 ? -1 : x + 2;
+            indicesX[7] = x >= image.GetLength(0) - 3 ? -1 : x + 3;
+            indicesX[8] = x >= image.GetLength(0) - 4 ? -1 : x + 4;
+
+            int[] indicesY = new int[9];
+            indicesY[0] = y <= 3 ? -1 : y - 4;
+            indicesY[1] = y <= 2 ? -1 : y - 3;
+            indicesY[2] = y <= 1 ? -1 : y - 2;
+            indicesY[3] = y == 0 ? -1 : y - 1;
+            indicesY[4] = y ;
+            indicesY[5] = y >= image.GetLength(1) - 1 ? -1 : y + 1;
+            indicesY[6] = y >= image.GetLength(1) - 2 ? -1 : y + 2;
+            indicesY[7] = y >= image.GetLength(1) - 3 ? -1 : y + 3;
+            indicesY[8] = y >= image.GetLength(1) - 4 ? -1 : y + 4;
+
+            for (int i = 0; i < 9; i++)
+                for (int j = 0; j < 9; j++)
+                {
+                    if (indicesX[i] == -1 || indicesY[j] == -1)
+                    {
+                        core[i, j] = 0;
+                    }
+                    else
+                    {
+                        core[i, j] = image[indicesX[i], indicesY[j]];
+                    }
+                }
+            return core;
+        }
         abstract public double calculation(double xConvolution, double yConvolution);
 
         protected double Gradient(double[,] core)
