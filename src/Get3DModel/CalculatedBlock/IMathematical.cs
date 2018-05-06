@@ -21,5 +21,15 @@ namespace CalculatedBlock
         /// Подсчет градиента в точке
         /// </summary>
         double gradientAtPoint(int x, int y);
+
+        /// <summary>
+        /// Установить порогое значение
+        /// </summary>
+        void setDeltaThreshold(double threshold);
+
+        /// <summary>
+        /// Получить порогое значение
+        /// </summary>
+        double getDeltaThreshold();
     }
 }
