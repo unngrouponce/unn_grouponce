@@ -218,6 +218,7 @@ namespace CalculatedBlock
         public double getMaxValueY()
         {
             double sum = 0;
+            if (yMatrix == null) return 0;
             for (int i = 0; i < yMatrix.GetLength(0); i++)
                 for (int j = 0; j < yMatrix.GetLength(1); j++)
                 {
