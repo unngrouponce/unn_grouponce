@@ -19,6 +19,7 @@ namespace CalculatedBlock
             xMatrix = null;
             yMatrix = null;
             deltaThreshold = 0;
+           
         }
 
         public double[,] XMatrix { get { return xMatrix; } }
@@ -31,6 +32,8 @@ namespace CalculatedBlock
             for (int i = 0; i < image.Width; i++)
                 for (int j = 0; j < image.Height; j++)
                     this.image[i, j] = image.GetPixel(i, j).B;
+            MaxValueX = getMaxValueX();
+            MaxValueY = getMaxValueY();
         }
 
         public void setDeltaThreshold(double threshold)
@@ -175,7 +178,8 @@ namespace CalculatedBlock
             return core;
         }
         abstract public double calculation(double xConvolution, double yConvolution);
-
+       protected double MaxValueX;
+       protected double MaxValueY;
         protected double Gradient(double[,] core)
         {
             double xConvolution = 0;
@@ -190,8 +194,8 @@ namespace CalculatedBlock
                 for (int i = 0; i < core.GetLength(0); i++)
                     for (int j = 0; j < core.GetLength(0); j++)
                         yConvolution += core[i, j] * yMatrix[j, i];
-            xConvolution /= getMaxValueX();
-            yConvolution /= getMaxValueY();
+            xConvolution /= MaxValueX;
+            yConvolution /= MaxValueY;
             return Math.Abs(calculation(xConvolution, yConvolution));
         }
 
