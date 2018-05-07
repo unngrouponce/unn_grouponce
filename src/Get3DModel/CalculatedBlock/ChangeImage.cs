@@ -11,7 +11,7 @@ namespace CalculatedBlock
     {
         public Bitmap translateToMonochrome(Bitmap image)
         {
-          /*  Bitmap res = new Bitmap(image.Width, image.Height, image.PixelFormat);
+            Bitmap res = new Bitmap(image.Width, image.Height, image.PixelFormat);
             for (int y = 0; y < image.Height; ++y)
             for (int x = 0; x < image.Width; ++x)
              {
@@ -20,8 +20,6 @@ namespace CalculatedBlock
                  res.SetPixel(x, y, Color.FromArgb(c.A, rgb, rgb, rgb));
                 }
             return res;
-           */
-            return image;
         }
     }
 }
