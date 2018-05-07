@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace CalculatedBlock
 {
-    public abstract class MathematicialSearchPoint:IMathematical
+    public abstract class MathematicialSearchPoint : IMathematical
     {
         protected double[,] xMatrix;
         protected double[,] yMatrix;
@@ -190,7 +190,8 @@ namespace CalculatedBlock
                 for (int i = 0; i < core.GetLength(0); i++)
                     for (int j = 0; j < core.GetLength(0); j++)
                         yConvolution += core[i, j] * yMatrix[j, i];
-
+            xConvolution /= getMaxValueX();
+            yConvolution /= getMaxValueY();
             return Math.Abs(calculation(xConvolution, yConvolution));
         }
 
@@ -198,6 +199,34 @@ namespace CalculatedBlock
         public double getDeltaThreshold()
         {
             return deltaThreshold;
+        }
+
+        public double getMaxValueX()
+        {
+            double sum = 0;
+            for (int i = 0; i < xMatrix.GetLength(0); i++)
+                for (int j = 0; j < xMatrix.GetLength(1); j++)
+                {
+                    if (xMatrix[i, j] > 0)
+                    {
+                        sum += xMatrix[i, j] * 255;
+                    }
+                }
+            return sum;
+        }
+
+        public double getMaxValueY()
+        {
+            double sum = 0;
+            for (int i = 0; i < yMatrix.GetLength(0); i++)
+                for (int j = 0; j < yMatrix.GetLength(1); j++)
+                {
+                    if (yMatrix[i, j] > 0)
+                    {
+                        sum += yMatrix[i, j] * 255;
+                    }
+                }
+            return sum;
         }
     }
 }

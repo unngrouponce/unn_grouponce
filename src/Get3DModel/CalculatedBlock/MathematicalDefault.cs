@@ -36,5 +36,15 @@ namespace CalculatedBlock
         {
             throw new NotImplementedException();
         }
+
+        public double getMaxValueX()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double getMaxValueY()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
