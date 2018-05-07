@@ -24,7 +24,6 @@ namespace Data
         {
             IParser parser = new Parser();
             _image = parser.readPNG(pathImage);
-
             FileInfo infoImage = new FileInfo(pathImage);
             string name = infoImage.Name.Replace(".png", "");
             string[] nameSplit = name.Split('_');
@@ -48,6 +47,4 @@ namespace Data
         public double tall { get { return _tall; } }
         public Bitmap image { get { return _image; } }
     }
-
 }
-
