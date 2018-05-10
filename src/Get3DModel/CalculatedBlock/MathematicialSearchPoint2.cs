@@ -15,6 +15,7 @@ namespace CalculatedBlock
             double[,] currentY_Matrix = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
             xMatrix = currentX_Matrix;
             yMatrix = currentY_Matrix;
+            deltaThreshold = 0.27;
         }
 
         public override double gradientAtPoint(int x, int y)

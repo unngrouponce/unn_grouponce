@@ -1,0 +1,4 @@
+C:\WorkSpace\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\ParsingInputData\bin\Debug\ParsingInputData.pdb
+C:\WorkSpace\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\ParsingInputData\obj\Debug\ParsingInputData.pdb

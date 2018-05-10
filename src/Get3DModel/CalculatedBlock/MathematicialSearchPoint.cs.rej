@@ -1,0 +1,15 @@
+diff a/src/Get3DModel/CalculatedBlock/MathematicialSearchPoint.cs b/src/Get3DModel/CalculatedBlock/MathematicialSearchPoint.cs	(rejected hunks)
+@@ -7,11 +7,11 @@
+ 
+ namespace CalculatedBlock
+ {
+-    public abstract class MathematicialSearchPoint:IMathematical
++    public abstract class MathematicialSearchPoint : IMathematical
+     {
+         protected double[,] xMatrix;
+         protected double[,] yMatrix;
+-        protected Bitmap image;
++        protected byte[,] image;
+         protected double deltaThreshold;
+ 
+         public MathematicialSearchPoint()

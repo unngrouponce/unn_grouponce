@@ -21,6 +21,6 @@ namespace ParsingInputData
         /// Читает png файл и возвращает карту цветов
         /// </summary>
         /// <param name="path">Путь к папке</param>
-       Bitmap readPNG(string path);
+        Bitmap readPNG(string path);
     }
 }

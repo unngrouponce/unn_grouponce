@@ -1,0 +1,30 @@
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.UnitTests.dll
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.UnitTests.pdb
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\CalculatedBlock.dll
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Data.dll
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.exe
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\ParsingInputData.dll
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Preserse.dll
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\CalculatedBlock.pdb
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.pdb
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Preserse.pdb
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\Data.pdb
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\bin\Debug\ParsingInputData.pdb
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\obj\Debug\Get3DModel.UnitTests.csprojResolveAssemblyReference.cache
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\obj\Debug\Get3DModel.UnitTests.dll
+D:\ИИТММ\5 курс\Спец курс\Модульное тестирования\Тестирование6\Get3DModel\Get3DModel.UnitTests\obj\Debug\Get3DModel.UnitTests.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\obj\Debug\Get3DModel.UnitTests.csprojResolveAssemblyReference.cache
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.UnitTests.dll
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.UnitTests.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\CalculatedBlock.dll
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Data.dll
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.exe
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Preserse.dll
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\CalculatedBlock.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Get3DModel.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Preserse.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\Data.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\bin\Debug\ParsingInputData.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\obj\Debug\Get3DModel.UnitTests.dll
+C:\WorkSpace\src\Get3DModel\Get3DModel.UnitTests\obj\Debug\Get3DModel.UnitTests.pdb

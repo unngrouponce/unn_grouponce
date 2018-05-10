@@ -32,6 +32,7 @@ namespace Get3DModel
             List<string> filesImagesname;
             string pathFolder;
             string pathConfig;
+
             if (args.Length == 0)
             { Console.WriteLine("usage: Get3DModel.exe <path to folder>"); Environment.Exit(-1); }
             pathFolder = args[0];

@@ -1,0 +1,17 @@
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Test.dll
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Test.pdb
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\CalculatedBlock.dll
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Data.dll
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Get3DModel.exe
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Preserse.dll
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\CalculatedBlock.pdb
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Data.pdb
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Get3DModel.pdb
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\ParsingInputData.pdb
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Preserse.pdb
+C:\WorkSpace\src\Get3DModel\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\WorkSpace\src\Get3DModel\Test\obj\Debug\Test.dll
+C:\WorkSpace\src\Get3DModel\Test\obj\Debug\Test.pdb
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Validator.exe
+C:\WorkSpace\src\Get3DModel\Test\bin\Debug\Validator.pdb

@@ -1,0 +1,9 @@
+diff a/src/Get3DModel/Get3DModel.UnitTests/MathematicialSearchPoint10Test.cs b/src/Get3DModel/Get3DModel.UnitTests/MathematicialSearchPoint10Test.cs	(rejected hunks)
+@@ -0,6 +0,7 @@
+ ﻿using System;
+ using Microsoft.VisualStudio.TestTools.UnitTesting;
+ using System.Diagnostics;
++using System.Collections.Generic;
+ using System.Drawing;
+ using CalculatedBlock;
+ using ParsingInputData;

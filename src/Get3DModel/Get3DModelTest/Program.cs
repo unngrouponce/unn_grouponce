@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.InteropServices;
+ 
 
 using ParsingInputData;
 using Data;
@@ -160,7 +160,7 @@ namespace Get3DModelTest
 
                 Solution solution = calculated.getSolution();
                 timeForParsing.Stop();
-                timeTxt.WriteLine(nameFolder + " - " + timeForParsing.ElapsedMilliseconds + " timeForParsing");
+                timeTxt.WriteLine(nameFolder + " - " + timeForParsing.ElapsedMilliseconds);
                 preserveOBJ.saveOBJ(solution, setting, saveFolderCurrent);
                 preservePNG.savePNG(solution, saveFolderCurrent);
                 saveDat(solution.Map, saveFolderCurrent);

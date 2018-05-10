@@ -1,0 +1,6 @@
+C:\WorkSpace\src\Get3DModel\Validator\bin\Debug\Validator.exe.config
+C:\WorkSpace\src\Get3DModel\Validator\bin\Debug\Validator.exe
+C:\WorkSpace\src\Get3DModel\Validator\bin\Debug\Validator.pdb
+C:\WorkSpace\src\Get3DModel\Validator\obj\Debug\Validator.exe
+C:\WorkSpace\src\Get3DModel\Validator\obj\Debug\Validator.pdb
+C:\WorkSpace\src\Get3DModel\Validator\obj\Debug\Validator.csprojResolveAssemblyReference.cache

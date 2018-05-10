@@ -16,6 +16,7 @@ namespace CalculatedBlock
                 { 0, 0, 0, 0, 0, 0, 0 }, { 1, 2, 3, 4, 3, 2, 1 }, { 1, 1, 2, 3, 2, 1, 1 }, { 1, 1, 1, 2, 1, 1, 1 } };
             xMatrix = currentX_Matrix;
             yMatrix = currentY_Matrix;
+            deltaThreshold = 0.16;
         }
 
         public override double gradientAtPoint(int x, int y)

@@ -13,6 +13,7 @@ namespace CalculatedBlock
         {
             double[,] currentX_Matrix = { { 1, 1, 1 }, { 1, -8, 1 }, { 1, 1, 1 } };
             xMatrix = currentX_Matrix;
+            deltaThreshold = 0.27;
         }
 
         public override double gradientAtPoint(int x, int y)

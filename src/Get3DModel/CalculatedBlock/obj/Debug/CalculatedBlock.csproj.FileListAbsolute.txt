@@ -1,0 +1,9 @@
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\bin\Debug\CalculatedBlock.dll
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\bin\Debug\CalculatedBlock.pdb
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\bin\Debug\Data.dll
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\bin\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\bin\Debug\Data.pdb
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\bin\Debug\ParsingInputData.pdb
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\obj\Debug\CalculatedBlock.csprojResolveAssemblyReference.cache
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\obj\Debug\CalculatedBlock.dll
+C:\WorkSpace\src\Get3DModel\CalculatedBlock\obj\Debug\CalculatedBlock.pdb

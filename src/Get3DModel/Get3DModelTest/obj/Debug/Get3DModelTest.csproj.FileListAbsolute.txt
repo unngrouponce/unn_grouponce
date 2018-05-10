@@ -1,0 +1,14 @@
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Get3DModelTest.exe.config
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Get3DModelTest.exe
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Get3DModelTest.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\CalculatedBlock.dll
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Data.dll
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Preserse.dll
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\CalculatedBlock.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Data.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\ParsingInputData.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\bin\Debug\Preserse.pdb
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\obj\Debug\Get3DModelTest.csprojResolveAssemblyReference.cache
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\obj\Debug\Get3DModelTest.exe
+C:\WorkSpace\src\Get3DModel\Get3DModelTest\obj\Debug\Get3DModelTest.pdb

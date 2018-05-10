@@ -1,0 +1,7 @@
+C:\WorkSpace\src\Get3DModel\Data\bin\Debug\Data.dll
+C:\WorkSpace\src\Get3DModel\Data\bin\Debug\Data.pdb
+C:\WorkSpace\src\Get3DModel\Data\bin\Debug\ParsingInputData.dll
+C:\WorkSpace\src\Get3DModel\Data\bin\Debug\ParsingInputData.pdb
+C:\WorkSpace\src\Get3DModel\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\WorkSpace\src\Get3DModel\Data\obj\Debug\Data.dll
+C:\WorkSpace\src\Get3DModel\Data\obj\Debug\Data.pdb

@@ -31,5 +31,15 @@ namespace CalculatedBlock
         /// Получить порогое значение
         /// </summary>
         double getDeltaThreshold();
+
+        /// <summary>
+        /// Получить максимальное значение для ядра по X
+        /// </summary>
+        double getMaxValueX();
+
+        /// <summary>
+        /// Получить максимальное значение для ядра по Y
+        /// </summary>
+        double getMaxValueY();
     }
 }
