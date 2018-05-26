@@ -26,9 +26,13 @@ namespace Data
             _image = parser.readPNG(pathImage);
 
             FileInfo infoImage = new FileInfo(pathImage);
-            string name = infoImage.Name.Replace(".png", "");
-            string[] nameSplit = name.Split('_');
-            _tall = Convert.ToDouble(nameSplit[1]);
+            try
+            {
+                string name = infoImage.Name.Replace(".png", "");
+                string[] nameSplit = name.Split('_');
+                _tall = Convert.ToDouble(nameSplit[1]);
+            }
+            catch { Console.WriteLine("image file have incorrect named"); Environment.Exit(-1); }
         }
         /// <summary>
         /// Ширина изображения в пикселях
